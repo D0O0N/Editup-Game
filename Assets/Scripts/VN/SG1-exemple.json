@@ -1,0 +1,103 @@
+{
+    "categories": [
+        {
+            "Catégorie": 0,
+            "NomCatégorie": "Accueillir le client",
+            "questions": [
+                {
+                    "idQ": "A_01",
+                    "question": "Bonjour Monsieur, soyez le bienvenu. Peut-on vous être utile ?",
+                    "réponse": "Bonjour. Oui, je viens pour régler un problème.",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Catégorie": 1,
+            "NomCatégorie": "Comprendre le besoin",
+            "questions": [
+                {
+                    "idQ": "Q_01",
+                    "question": "Je vous écoute. Dites moi quel est le problème ?",
+                    "réponse": "Voilà : j'ai souscrit à un forfait d'essai pour un mois la semaine dernière et je viens d'apprendre que je dois partir demain en mission pour deux semaines... Je viens donc reporter ce forfait de 2 semaines.",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Evitez d'utiliser le mot \"problème\" dans vos discussions avec vos clients."
+                    }
+                },
+                {
+                    "idQ": "Q4",
+                    "question": "Nous n'avons que des solutions !!!",
+                    "réponse": "Eh bien tant mieux parce que là, ça ne va pas vraiment !",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q99",
+                    "question": "Solution",
+                    "réponse": "Super !",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous invitez votre client à s'exprimer, c'est la bonne attitude relationnelle."
+        },
+        {
+            "Catégorie": 2,
+            "NomCatégorie": "Gérer la réclamation",
+            "questions": [
+                {
+                    "idQ": "Q_09",
+                    "question": "Pouvez-vous me donner des précisions sur ce forfait auquel vous avez souscrit ?",
+                    "réponse": "Je me souviens que c'était une offre de découverte valable 1 mois.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 2,
+                        "questDébloq": [
+                            {
+                                "idQ": "Q_07"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "questionsDéblocables": [
+                {
+                    "idQ": "Q_07",
+                    "question": "Vous faites référence au \"forfait découverte\", sans doute ? ",
+                    "réponse": "Oui ça doit être cela.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous adoptez la technique de reformulation pour valider la compréhension de la situation, c'est la bonne attitude, continuez."
+        },
+        {
+            "Catégorie": 3,
+            "NomCatégorie": "Test",
+            "questions": [
+                {
+                    "idQ": "Q_999",
+                    "question": "Réponse gagnante",
+                    "réponse": "Je suis content.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ],
+            "analyseFinCat": "Analyse de catégorie......... , c'est la bonne attitude, continuez."
+        }
+    ],
+    "TexteFin": "Vous avez géré ce client de mauvaise foi en canalisant la discussion. En restant ferme et factuel sur les conditions du contrat, vous avez évité de lui laisser la possiblité d'argumenter inutilement."
+}
