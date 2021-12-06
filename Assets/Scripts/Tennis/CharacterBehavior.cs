@@ -15,11 +15,11 @@ public class CharacterBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("right"))
+        if (Input.GetButton("Right"))
         {
             transform.position = transform.position + new Vector3(movementSpeed * Time.deltaTime,0, 0);
         }
-        if (Input.GetButton("left"))
+        if (Input.GetButton("Left"))
         {
             transform.position = transform.position + new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
         }
