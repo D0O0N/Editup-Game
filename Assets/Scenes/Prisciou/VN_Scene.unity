@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 550229570}
   - component: {fileID: 550229569}
   m_Layer: 5
-  m_Name: Question BG
+  m_Name: "R\xE9ponseClient"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,6 +1351,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1436870890}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1436870892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2388772431226456717, guid: 4d38c47f2eb3ee84bbbe48211d1e1f98,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436870890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e527ec480482f924da48d80f384903a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714319665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,9 +1523,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DamierManager, Assembly-CSharp
-        m_MethodName: StartLevel
+      - m_Target: {fileID: 1436870892}
+        m_TargetAssemblyTypeName: GoScene, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
