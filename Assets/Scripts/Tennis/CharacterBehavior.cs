@@ -19,14 +19,5 @@ public class CharacterBehavior : MonoBehaviour
         if (worldPosition.x >-4 && worldPosition.x < 4) {
             transform.position = new Vector3(worldPosition.x, -2.18f, 0);
         }
-        //Old Keyboard Controls
-        /*if (Input.GetButton("Right"))
-        {
-            transform.position = transform.position + new Vector3(movementSpeed * Time.deltaTime,0, 0);
-        }
-        if (Input.GetButton("Left"))
-        {
-            transform.position = transform.position + new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
-        }*/
     }
 }

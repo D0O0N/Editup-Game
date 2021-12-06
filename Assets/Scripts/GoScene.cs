@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GoScene : MonoBehaviour
 {
-    [SerializeField] Object sceneToGo;
+    string sceneName = "MenuScene";
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,6 @@ public class GoScene : MonoBehaviour
 
     // Load a scene passed in params
     public void LoadScene(){
-        SceneManager.LoadScene(sceneToGo.name);
+        SceneManager.LoadScene(sceneName);
     }
 }
