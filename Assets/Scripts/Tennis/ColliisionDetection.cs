@@ -25,14 +25,14 @@ public class ColliisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "BadSentence(Clone)")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
         {
             float currentValue = animator.GetFloat("Status");
             animator.SetFloat("Status", currentValue - MalusPointValue);
             Destroy(other.gameObject);
 
         }
-        if (other.gameObject.name == "GoodSentence(Clone)")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "R")
         {
             float currentValue = animator.GetFloat("Status");
             animator.SetFloat("Status", currentValue + BonusPointValue);
@@ -41,6 +41,10 @@ public class ColliisionDetection : MonoBehaviour
 
             particle.transform.position = counter.transform.position;
             particle.Play();
+        }
+        if (other.gameObject.name == "WhateverYouWant")
+        {
+           //Possibility of adding mor behaviors here
         }
     }
 }
