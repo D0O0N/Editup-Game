@@ -128,15 +128,18 @@ public class DamierManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Moves the GameObject from it's current position to destination over time
         //player.position = Vector2.Lerp(player.position, target.position, Time.deltaTime*2);
 
-        player.position = Vector2.MoveTowards(player.position, target.position, 1);
+        player.position = Vector2.MoveTowards(player.position, target.position, 15);
         //nextLine.position = Vector2.Lerp(nextLine.position, playerLine.position, Time.deltaTime*2);
 
         UpdateTimeBar();
+        
+    }
+    void Update(){
         if (inGame && Time.time > nextActionTime ) {
             UpdateTimeBar();
             nextActionTime += period;
@@ -147,7 +150,6 @@ public class DamierManager : MonoBehaviour
                 EndLevel();
             }
         }
-        
     }
 
     // Split la donnée pour question / answer[] / goodAnswer

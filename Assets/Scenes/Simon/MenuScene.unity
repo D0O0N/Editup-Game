@@ -805,10 +805,10 @@ MonoBehaviour:
   txtComp: {fileID: 1440528877}
   sceneDamier: {fileID: 102900000, guid: 8b1afcce69a6a084790db25cb3293c15, type: 3}
   sceneBrick: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  sceneVS: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  sceneSoncas: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  sceneRDamier: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  sceneRBrick: {fileID: 102900000, guid: 13d44a350772c7740b356e02726c9c51, type: 3}
+  sceneVS: {fileID: 102900000, guid: 13d44a350772c7740b356e02726c9c51, type: 3}
+  sceneSoncas: {fileID: 102900000, guid: fe23d7c5f02f6ea45af521c346e6fcc9, type: 3}
+  sceneRDamier: {fileID: 102900000, guid: 8b1afcce69a6a084790db25cb3293c15, type: 3}
+  sceneRBrick: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
 --- !u!1 &650746371
 GameObject:
   m_ObjectHideFlags: 0
