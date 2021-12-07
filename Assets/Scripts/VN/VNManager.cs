@@ -12,26 +12,58 @@ public class VNManager : MonoBehaviour
     public TextMeshProUGUI textReponse;
     public GameObject popup;
     public GameObject endLevel;
+    public GameObject levelChoice;
+    public Transform VNParent;
+    public TextMeshProUGUI titreVN;
+    public TextMeshProUGUI nomPerso;
+    public TextMeshProUGUI descriptionVN;
+    public Button buttonStartVN;
     private VN vn;
-    private int VNnb = 0;
     private int cat = 0;
     // Start is called before the first frame update
     void Start()
     {
-        vn = JsonUtility.FromJson<VN>(fichiersJson[VNnb].text);
-        /*
-        foreach (Categorie categorie in vn.categories)
-        {
-            Debug.Log(categorie.NomCatégorie);
-        }
-        */
-        LoadCat(0);
+        SearchVN();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private void SearchVN()
+    {
+        foreach (TextAsset fichier in fichiersJson)
+        {
+            VN jeu = JsonUtility.FromJson<VN>(fichier.text);
+            GameObject button = Instantiate(prefabButtonQuestion);
+            button.transform.SetParent(VNParent);
+            button.name = jeu.intro.titre;
+            button.GetComponentInChildren<TextMeshProUGUI>().text = jeu.intro.titre;
+            button.GetComponent<Button>().onClick.AddListener(() => ViewDescVN(jeu));
+        }
+    }
+
+    private void ViewDescVN(VN v)
+    {
+        titreVN.text = v.intro.titre;
+        nomPerso.text = v.intro.client;
+        descriptionVN.text = v.intro.description;
+        buttonStartVN.GetComponent<Button>().onClick.AddListener(() => LoadVN(v));
+    }
+
+    private void LoadVN(VN v)
+    {
+        vn = v;
+        LoadCat(0);
+        levelChoice.SetActive(false);
+    }
+
+    private void LoadVN(int nb)
+    {
+        vn = JsonUtility.FromJson<VN>(fichiersJson[nb].text);
+        LoadCat(0);
     }
 
     private void LoadCat(int nbCat)
@@ -77,8 +109,9 @@ public class VNManager : MonoBehaviour
     {
         if (debloq)
         {
-            QuestSelect(id,vn.categories[cat].questionsDéblocables);
-        } else
+            QuestSelect(id, vn.categories[cat].questionsDéblocables);
+        }
+        else
         {
             QuestSelect(id, vn.categories[cat].questions);
         }
