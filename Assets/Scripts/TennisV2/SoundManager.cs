@@ -14,20 +14,14 @@ public class SoundManager : MonoBehaviour
         src = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "BadSentence(Clone)")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
         {
             src.clip = srcBad;
             src.Play();
         }
-        if (other.gameObject.name == "GoodSentence(Clone)")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "R")
         {
             src.clip = srcGood;
             src.Play();
