@@ -13,8 +13,14 @@ public class SpawnObject : MonoBehaviour
     private int random;
     public UnityEngine.UI.Text Sentence;
     private string[,] data;
+    private bool stopGame = false;
 
     // Start is called before the first frame update
+    public void stoop()
+    {
+        stopGame = true;
+    }
+
     void Start()
     {
         Sentence.text = "Bonjour";
@@ -32,16 +38,19 @@ public class SpawnObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
+        if (!stopGame)
         {
-            Rigidbody clone;
-            random = Random.Range(0, data.GetLength(0));
-            clone = Instantiate(ball, transform.position + new Vector3(Random.Range(-5f, 5f), 0, 0), transform.rotation);
-            clone.velocity = transform.TransformDirection(Vector3.down * Speed);
-            clone.gameObject.GetComponent<BallBehavior>().type = data[random,1];
-            Sentence.text = data[random,0];
-            timeLeft = Random.Range(minTime, maxTime);
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
+                Rigidbody clone;
+                random = Random.Range(0, data.GetLength(0));
+                clone = Instantiate(ball, transform.position + new Vector3(Random.Range(-5f, 5f), -1.5f, 0), transform.rotation);
+                clone.gameObject.GetComponent<BallBehavior>().startTimer();
+                clone.gameObject.GetComponent<BallBehavior>().type = data[random, 1];
+                Sentence.text = data[random, 0];
+                timeLeft = Random.Range(minTime, maxTime);
+            }
         }
     }
 }
