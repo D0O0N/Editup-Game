@@ -25,6 +25,7 @@ public class VNManager : MonoBehaviour
     public Image personnage;
     public Sprite[] chatellaineEmotions;
     public Sprite[] picEmotions;
+    public Sprite retourSprite;
     private VN vn;
     private int cat = 0;
     private int actionPoints;
@@ -214,7 +215,8 @@ public class VNManager : MonoBehaviour
         popupTitle.text = "GAME OVER";
         popupText.text = raison;
         popup.GetComponentInChildren<Button>().onClick.AddListener(() => goMenu.LoadScene());
-        popup.GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = "Quitter";
+        popup.GetComponentInChildren<Button>().GetComponentInChildren<Image>().sprite = retourSprite;
+        //popup.GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = "Quitter";
         popup.SetActive(true);
     }
 
