@@ -1,0 +1,246 @@
+{
+  "intro": {
+    "titre": "Plastiques toxiques",
+    "client": "Pic",
+    "description": "Vous êtes au téléphone avec une fidèle cliente Sandrine Pic, responsable des achats chez Marcolini.\nVous lui proposez d'installer des fontaines à eau dans son show-room, mais elle ne semble pas attirée par votre service.\nA vous de déjouer ses objections !",
+    "actionPoints": 6
+  },
+  "categories": [
+    {
+      "Catégorie": 0,
+      "NomCatégorie": "Traiter les objections",
+      "questions": [
+        {
+          "idQ": "A_01",
+          "question": "Bonjour madame Pic. Je vous appelle pour savoir si vous avez consulté notre catalogue de fontaine à eau ?",
+          "réponse": "Oui merci, mais ce qui me préoccupe, c’est que vos containers sont en plastique",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 1
+          }
+        },
+        {
+          "idQ": "A_02",
+          "question": "Bonjour madame Pic. Qu'avez-vous pensé de notre service de fontaine à eau ? Vous avez du recevoir notre catalogue n'est-ce pas ?",
+          "réponse": "Oui merci, mais ce qui me préoccupe, c’est que vos containers sont en plastique",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 1
+          }
+        },
+        {
+          "idQ": "A_03",
+          "question": "Bonjour madame Pic. Avez-vous reçu notre catalogue qui présente nos fontaines à eaux ?",
+          "réponse": "Oui merci, mais ce qui me préoccupe, c’est que vos containers sont en plastique",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 1
+          }
+        }
+      ]
+    },
+    {
+      "Catégorie": 1,
+      "NomCatégorie": "Accepter et creuser",
+      "questions": [
+        {
+          "idQ": "Q_01",
+          "question": "Que voulez-vous dire ?",
+          "réponse": "Vous lisez la presse j'espère ! Tout le monde parle de la toxicité des plastiques !",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "C'est bien de creuser autour du sujet d'inquiétude de votre cliente mais vous devez d'abord faire preuve d'empathie en acceptant son objection."
+          }
+        },
+        {
+          "idQ": "Q_02",
+          "question": "En plastique ? C’est-à-dire ?",
+          "réponse": "Vous n'êtes pas sans savoir que les plastiques contiennent des substances toxiques !",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "C'est bien de creuser autour du sujet d'inquiétude de votre cliente mais vous devez d'abord faire preuve d'empathie en acceptant son objection."
+          }
+        },
+        {
+          "idQ": "Q_03",
+          "question": "Je comprends : qu'est-ce qui vous inquiète exactement ?",
+          "réponse": "J'imagine que vos containers sont fabriqués avec des plastiques toxiques.",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 1
+          }
+        },
+        {
+          "idQ": "Q4",
+          "question": "Il n’y a aucune raison de vous inquieter madame Pic.",
+          "réponse": "Et bien si, je m'inquiète ! Justement !",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Evitez ce genre de formule qui ne vous aide pas à neutraliser l'objection. Acceptez les réserves de votre cliente et questionnez-là pour en savoir plus."
+          }
+        },
+        {
+          "idQ": "Q5",
+          "question": "Rassurez-vous, nous appliquons toutes les normes en vigueur.",
+          "réponse": "Oui enfin vous dites tous cela ...",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Evitez ce genre de formule qui ne vous aide pas à neutraliser l'objection. Acceptez les réserves de votre cliente et questionnez-là pour en savoir plus."
+          }
+        },
+        {
+          "idQ": "Q6",
+          "question": "Rassurez-vous, nous appliquons toutes les normes en vigueur.",
+          "réponse": "Oui enfin vous dites tous cela ...",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Evitez ce genre de formule qui ne vous aide pas à neutraliser l'objection. Acceptez les réserves de votre cliente et questionnez-là pour en savoir plus."
+          }
+        }
+      ]
+    },
+    {
+      "Catégorie": 2,
+      "NomCatégorie": "Reformuler et Neutraliser",
+      "questions": [
+        {
+          "idQ": "Q_01",
+          "question": "Connaissez-vous le règlement 10/2011 de la commission européenne ?",
+          "réponse": "Non je ne suis pas spécialiste ! De quoi me parlez-vous ?",
+          "posture": 0,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "En interrogeant votre cliente sur ces sujets règlementaires qui ne la concerne pas, vous la mettez en défaut et n'apportez pas de réponse claire à son objection !"
+          }
+        },
+        {
+          "idQ": "Q_02",
+          "question": "Vous avez entendu parler de la loi du 14 janvier 2011 concernant les matériaux et objets en matière plastique destinés à entrer en contact avec des denrées alimentaires ?",
+          "réponse": "Oui enfin non... De quoi me parlez-vous ? ",
+          "posture": 0,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "En interrogeant votre cliente sur ces sujets règlementaires qui ne la concerne pas, vous la mettez en défaut et n'apportez pas de réponse claire à son objection !"
+          }
+        },
+        {
+          "idQ": "Q_03",
+          "question": "Avez-vous visité notre site internet qui mentionne toutes nos procédures de fabrication ?",
+          "réponse": "Non je n'ai pas de temps pour cela.",
+          "posture": 0,
+          "résultat": {
+            "typeRes": 0
+          }
+        },
+        {
+          "idQ": "Q_04",
+          "question": "Vous êtes sensibilisée aux problématiques de santé : si vous le souhaitez, je vous communiquerai les informations qui prouvent que nous appliquons la règlementation en vigueur depuis le 14 janvier 2011.",
+          "réponse": "Je vous remercie, je veux bien que vous me fassiez parvenir ces informations.",
+          "posture": 2,
+          "résultat": {
+            "typeRes": 1
+          }
+        },
+        {
+          "idQ": "Q_05",
+          "question": "Vous êtes inquiète mais rassurez-vous, nous sommes des professionnels et vendons des produits de qualité !",
+          "réponse": "Oui mais bon. Vous dites tous cela ...",
+          "posture": 2,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Vous n'apportez aucune preuve de ce que vous énnoncez ! Ce ton péremptoir peut avoir un impact très négatif sur votre cliente."
+          }
+        },
+        {
+          "idQ": "Q_06",
+          "question": "Nous n'avons jamais eu de problème avec nos clients sur ce sujet.",
+          "réponse": "Je vous remercie, j'irai consulter ces informations",
+          "posture": 2,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Votre ton péremptoir peut avoir un impact très négatif sur votre cliente."
+          }
+        }
+      ],
+      "analyseFinCat": "Vous avez reformulé les inquiétudes de votre cliente et neutralisé l'objection en apportant des preuves factuelles. Vous êtes en bonne voie."
+    },
+    {
+      "Catégorie": 3,
+      "NomCatégorie": "Isoler et Conclure",
+      "questions": [
+        {
+          "idQ": "Q_01",
+          "question": "Ce point mis à part, qu'avez-vous pensé de notre offre ?",
+          "réponse": "Je reconnais que ce serait agréable pour nos clients.",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 2,
+            "questDébloq": [
+              {
+                "idQ": "Q_03"
+              }
+            ]
+          }
+        },
+        {
+          "idQ": "Q_02",
+          "question": "Mais ne pensez-vous pas que des fontaines à eau seraient un service de qualité pour votre clientèle ?",
+          "réponse": "Si mais je ne veux pas empoisonner mes clients, moi !",
+          "posture": 0,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Vous essayez de passer en force sans avoir pris soin d'isoler le sujet qui inquiète votre cliente."
+          }
+        },
+        {
+          "idQ": "Q_04",
+          "question": "Votre show-room serait encore plus accueillant avec des fontaines à eau.",
+          "réponse": "Oui mais bon. Vous dites tous cela ...",
+          "posture": 2,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Vous essayez de passer en force sans avoir pris soin d'isoler le sujet qui inquiète votre cliente."
+          }
+        },
+        {
+          "idQ": "Q_05",
+          "question": "Beaucoup de nos clients sont très satisfaits de ce service et ne peuvent plus s'en passer !",
+          "réponse": "Je me fiche de vos autres clients ! Si les questions de santé ne les intéressent pas,  c'est leur problème !",
+          "posture": 0,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Vous essayez de passer en force sans avoir pris soin d'isoler le sujet qui inquiète votre cliente."
+          }
+        },
+        {
+          "idQ": "Q_06",
+          "question": "Etant donné que vous êtes positionné sur du très haut de gamme, je pense que ce service proposé à vos clients s'impose !",
+          "réponse": "Certes mais je souhaite avant tout être rassurée sur la question des plastiques !",
+          "posture": 3,
+          "résultat": {
+            "typeRes": 3,
+            "raisonGO": "Vous essayez de passer en force sans avoir pris soin d'isoler le sujet qui inquiète votre cliente."
+          }
+        }
+      ],
+      "questionsDéblocables": [
+        {
+          "idQ": "Q_03",
+          "question": "Avez-vous par exemple apprécié l'offre de service accompagnant l'installation des fontaines à eau ?",
+          "réponse": "Oui j'ai vu que vous assuriez le renouvellement à la demande. C'est parfait.",
+          "posture": 1,
+          "résultat": {
+            "typeRes": 9
+          }
+        }
+      ],
+      "analyseFinCat": "Vous avez sur isoler l'objection de votre cliente avant de revenir sur votre offre. Votre cliente est dans de bonnes dispositions pour vous écouter de nouveau, c'est parfait !"
+    }
+  ],
+  "TexteFin": "Félicitations, votre démarche a été très professionnelle : vous avez su traiter l'objection en l'acceptant, en la neutralisant ensuite en apportant des preuves et en l'isolant avant de poursuivre votre vente."
+}
