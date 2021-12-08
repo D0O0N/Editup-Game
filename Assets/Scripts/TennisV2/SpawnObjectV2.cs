@@ -20,8 +20,8 @@ public class SpawnObjectV2 : MonoBehaviour
     public GameObject spawn2;
     public Sprite spriteBallF;
     public Sprite spriteBallI;
-    //public Button btnMenu;
-    //public Button btnRestart;
+    public Button btnMenu;
+    public Button btnMenu2;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +37,8 @@ public class SpawnObjectV2 : MonoBehaviour
                 {"Il n'est jamais là", "I"}
             };
 
-        //btnMenu.onClick.AddListener(goMenu);
-        //btnRestart.onClick.AddListener(restart);
+        btnMenu.onClick.AddListener(goMenu);
+        btnMenu2.onClick.AddListener(goMenu);
     }
 
     public void stoop()
@@ -59,8 +59,6 @@ public class SpawnObjectV2 : MonoBehaviour
 
                 Vector3 pos1 = new Vector3(Random.Range(-5f, 5f), 0, 0);
                 Vector3 pos2 = new Vector3(Random.Range(-5f, 5f), 0, 0);
-                //Vector3 pos1 = spawn1.transform.position;
-                //Vector3 pos2 = spawn2.transform.position;
 
                 clone = Instantiate(ball, transform.position + pos1, transform.rotation);
                 clone2 = Instantiate(ball, transform.position + pos2, transform.rotation);
@@ -89,51 +87,11 @@ public class SpawnObjectV2 : MonoBehaviour
 
                 Sentence.text = data[random, 0];
                 timeLeft = Random.Range(minTime, maxTime);
-                /*Rigidbody clone;
-                Rigidbody clone2;
-                random = Random.Range(0, data.GetLength(0));
-
-                Vector3 pos1 = new Vector3(Random.Range(-5f, 5f), 0, 0);
-                Vector3 pos2 = new Vector3(Random.Range(-5f, 5f), 0, 0);
-
-                if (Vector3.Distance(pos1, pos2) < minDistance) {
-                    pos2 = new Vector3(Random.Range(-5f, 5f), 0, 0);
-                }
-
-                clone = Instantiate(ball, transform.position + pos1, transform.rotation);
-                clone2 = Instantiate(ball, transform.position + pos2, transform.rotation);
-
-                clone.velocity = transform.TransformDirection(Vector3.down * Speed);
-                clone2.velocity = transform.TransformDirection(Vector3.down * Speed);
-
-                Sentence.text = data[random,0];
-
-                if (data[random, 1] == "F") {
-                    clone.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    clone.gameObject.GetComponent<BallBehaviorV2>().type = "F";
-                    clone.gameObject.GetComponent<BallBehaviorV2>().rep = "F";
-                    clone2.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-                    clone2.gameObject.GetComponent<BallBehaviorV2>().type = "I";
-                    clone2.gameObject.GetComponent<BallBehaviorV2>().rep = "F";
-                } else {
-                    clone.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-                    clone.gameObject.GetComponent<BallBehaviorV2>().type = "I";
-                    clone.gameObject.GetComponent<BallBehaviorV2>().rep = "I";
-                    clone2.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    clone2.gameObject.GetComponent<BallBehaviorV2>().type = "F";
-                    clone2.gameObject.GetComponent<BallBehaviorV2>().rep = "I";
-                }
-
-                timeLeft = Random.Range(minTime, maxTime);*/
             }
         }
     }
 
     void goMenu() {
         SceneManager.LoadScene("MenuScene");
-    }
-
-    void restart() {
-        SceneManager.LoadScene("TennisV2");
     }
 }
