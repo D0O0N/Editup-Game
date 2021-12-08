@@ -82,6 +82,7 @@ public class VNManager : MonoBehaviour
             default:
             break;
         }
+        personnage.sprite = emotions[0];
         LoadCat(0);
         levelChoice.SetActive(false);
     }
@@ -89,8 +90,7 @@ public class VNManager : MonoBehaviour
     private void LoadVN(int nb)
     {
         vn = JsonUtility.FromJson<VN>(fichiersJson[nb].text);
-        actionPoints = vn.intro.actionPoints;
-        LoadCat(0);
+        LoadVN(vn);
     }
 
     private void LoadCat(int nbCat)
