@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
 
-    [SerializeField] private string[] questionsList;
-    [SerializeField] private string[] answerList;
-    [SerializeField] private Sprite[] charactersList;
+    [SerializeField] private string[] questionsArray;
+    [SerializeField] private string[] answerArray;
+    [SerializeField] private Sprite[] charactersArray;
 
     [SerializeField] private GameObject character;
     [SerializeField] private Text questionText;
@@ -21,8 +21,15 @@ public class GameController : MonoBehaviour
     private string userAnswer;
 
     private int lastQuestionAsked = -1;
+    private int lastCharacterDisplayed = -1;
     private int randomQID = -1;
-    
+    private int randomCharacter = -1;
+
+    private List<string> questionsList = new List<string>();
+    private List<string> answersList = new List<string>();
+
+    private string lastAnswerFromList = "";
+
     private int happyClients = 0;
     private int sadClients = 0;
 
@@ -33,8 +40,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         InitialisatioAndCreationJSONFile();
+        FillQuestionsList();
+        FillAnswersList();
+
         DisplayRandomCharacter();
-        DisplayRandomQuestion();
+        DisplayRandomQuestionV2();
+
+        DisplayPoints(happyClients, sadClients);
     }
 
     // Update is called once per frame
@@ -43,32 +55,49 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void getAnswerFromButtons(string a)
-    {
-        userAnswer = a;
-        Debug.Log($"got answer {a} from user");
-
-        CheckAnswer();
-        DisplayRandomCharacter();
-    }
-
     private void CheckAnswer()
     {
-        string answer = answerList[lastQuestionAsked];
+        string answer = answerArray[lastQuestionAsked];
 
         if (userAnswer == answer)
         {
-            happyClients++;            
+            happyClients++;
             DisplayRandomQuestion();
-
         }
         else
         {
             sadClients++;
             DisplayRandomQuestion();
         }
-        
-        DisplayPoints(happyClients,sadClients);
+
+        DisplayPoints(happyClients, sadClients);
+    }
+
+
+    private void CheckAnswerV2()
+    {
+        if (userAnswer == lastAnswerFromList)
+        {
+            happyClients++;
+            DisplayRandomQuestionV2();
+        }
+        else
+        {
+            //sadClients++;
+            sadClients = 0;
+            happyClients = 0;
+
+            questionsList.Clear(); //resetList
+            answersList.Clear();
+
+            FillQuestionsList();
+            FillAnswersList();
+
+            DisplayRandomQuestionV2();
+        }
+
+        DisplayRandomCharacter();
+        DisplayPoints(happyClients, sadClients);
     }
 
     private void InitialisatioAndCreationJSONFile()
@@ -81,8 +110,23 @@ public class GameController : MonoBehaviour
         else
         {
             // File does not exist. // This could mean it was deleted or has not been created yet. // Write new json file with default questions and answer form editor
-
             WriteJSON();
+        }
+    }
+
+    private void FillQuestionsList()
+    {
+        for (int i = 0; i < questionsArray.Length; i++)
+        {
+            questionsList.Add(questionsArray[i]);
+        }
+    }
+
+    private void FillAnswersList()
+    {
+        for (int i = 0; i < answerArray.Length; i++)
+        {
+            answersList.Add(answerArray[i]);
         }
     }
 
@@ -97,34 +141,59 @@ public class GameController : MonoBehaviour
 
     private void DisplayRandomCharacter()
     {
-        int randomCharacter = Random.Range(0, charactersList.Length);
-        character.GetComponent<SpriteRenderer>().sprite = charactersList[randomCharacter];
+        do
+        {
+            randomCharacter = Random.Range(0, charactersArray.Length);
+        }
+        while (lastCharacterDisplayed == randomCharacter);
+
+        character.GetComponent<SpriteRenderer>().sprite = charactersArray[randomCharacter];
     }
 
     private void DisplayRandomQuestion()
     {
         do
         {
-            randomQID = Random.Range(0, questionsList.Length);
+            randomQID = Random.Range(0, questionsArray.Length);
         }
         while (lastQuestionAsked == randomQID);
-        
-        questionText.text = questionsList[randomQID];
+
+        questionText.text = questionsArray[randomQID];
         lastQuestionAsked = randomQID;
     }
 
+
+    private void DisplayRandomQuestionV2()
+    {
+        int questionsCount = questionsList.Count;
+
+        if (questionsCount > 0)
+        {
+            int qID = Random.Range(0, questionsList.Count);
+            questionText.text = questionsList[qID];
+            lastAnswerFromList = answersList[qID];
+
+            answersList.RemoveAt(qID);
+            questionsList.RemoveAt(qID);
+        }
+        else
+        {
+            //gameOver
+            Debug.Log("GameOver");
+            questionText.text = "GameOver";
+        }
+    }
+
     private void WriteJSON()
-    {   
+    {
         QuestionsAnswers QAdata = new QuestionsAnswers();
-        QAdata.questions = questionsList;
-        QAdata.answers = answerList;
+        QAdata.questions = questionsArray;
+        QAdata.answers = answerArray;
 
         string json = JsonUtility.ToJson(QAdata);
         Debug.Log(json);
 
         File.WriteAllText(jsonFilePath, json);
-
-        //{"caseCollidersArray":[{"name":"moboPlace","state":"case1","position":{"x":-4.5,"y":1.5},"collSizeArray":{"x":3.240000009536743,"y":4.0}}]}
     }
 
     private void ReadJSON()
@@ -134,9 +203,18 @@ public class GameController : MonoBehaviour
         string jsonText = File.ReadAllText(jsonFilePath);
         JsonUtility.FromJsonOverwrite(jsonText, QAdata);
 
-        questionsList = QAdata.questions;
-        answerList = QAdata.answers;
-    }    
+        questionsArray = QAdata.questions;
+        answerArray = QAdata.answers;
+    }
+
+    public void getAnswerFromButtons(string a)
+    {
+        userAnswer = a;
+        Debug.Log($"got answer {a} from user");
+
+        //CheckAnswer();
+        CheckAnswerV2();
+    }
 
     [System.Serializable]
     public class QuestionsAnswers
