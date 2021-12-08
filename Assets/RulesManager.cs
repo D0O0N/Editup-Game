@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GoScene : MonoBehaviour
+public class RulesManager : MonoBehaviour
 {
-    string sceneName = "MenuScene";
+    public Sprite[] rules;
+    int actualComp;
     // Start is called before the first frame update
     void Start()
     {
-        
+        actualComp = PlayerPrefs.GetInt("ActualCompetence");
+        this.GetComponent<Image>().sprite = rules[actualComp - 1];
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    // Load a scene passed in params
-    public void LoadScene(){
-        SceneManager.LoadScene(2);
     }
 }

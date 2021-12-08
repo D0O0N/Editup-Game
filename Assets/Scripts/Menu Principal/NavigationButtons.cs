@@ -28,6 +28,11 @@ public class NavigationButtons : MonoBehaviour
         SceneManager.LoadScene(id);
     }
 
+    public void SaveCompetence(int c){
+        PlayerPrefs.SetInt("ActualCompetence", c);
+
+    }
+
     public void QuitApplication()
     {
         Application.Quit();

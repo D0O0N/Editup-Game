@@ -16,16 +16,15 @@ public class CoursManager : MonoBehaviour
     public Image validateFrame;
     public TextMeshProUGUI titleFrame;
 
+    private int lvlComp = 0;
+
     private int actualComp = 1;
 
     int actualScreen = 0;
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("ActualCompetence", 1);
-        previousFrame.gameObject.SetActive(false);
-        nextFrame.gameObject.SetActive(true);
-        validateFrame.gameObject.SetActive(false);
+        //PlayerPrefs.SetInt("ActualCompetence", 1);
         LoadCours();
     }
 
@@ -38,6 +37,10 @@ public class CoursManager : MonoBehaviour
     void LoadCours(){
         actualComp = PlayerPrefs.GetInt("ActualCompetence");
         titleFrame.text = titleCours[actualComp - 1];
+        previousFrame.gameObject.SetActive(false);
+        nextFrame.gameObject.SetActive(true);
+        validateFrame.gameObject.SetActive(false);
+        lvlComp = PlayerPrefs.GetInt("LvlComp" + actualComp);
 
 
     }
@@ -60,12 +63,14 @@ public class CoursManager : MonoBehaviour
         validateFrame.gameObject.SetActive(false);
     }
 
-    public void GoToScene(){
-
+    public void GoToScene(int id){
+        SceneManager.LoadScene(2);
     }
 
     public void EndCours(){
-        PlayerPrefs.SetInt("ActualCompetence", 1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
+        if (lvlComp < 2){
+            PlayerPrefs.SetInt("LvlComp"+actualComp, 2);
+        }
     }
 }

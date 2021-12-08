@@ -12,25 +12,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Principal/Menu Principal.unity
     guid: f57beaa4a8c6fe74cb774b4393a6ad1a
   - enabled: 1
-    path: Assets/Scenes/Menu Principal/Cours/Connaitre son client/Menu Connaitre
-      son client.unity
+    path: Assets/Scenes/Menu Principal/MenuCompetence.unity
     guid: 295ded7dbc4072b41b0fec57ae188dc8
   - enabled: 1
-    path: Assets/Scenes/Menu Principal/Cours/Connaitre son client/CSC en mot.unity
-    guid: 7daaa800f910e1d418eeab09a0f589a4
+    path: Assets/Scenes/Menu Principal/Cours.unity
+    guid: 1d6b1c3d77c42514f808d7970d6728ba
   - enabled: 1
     path: Assets/Scenes/Gwen/Damier.unity
     guid: 8b1afcce69a6a084790db25cb3293c15
   - enabled: 1
-    path: Assets/Scenes/Simon/MenuScene.unity
-    guid: 25b64acc69a257b7ab9a55b756902839
+    path: Assets/Scenes/Carlos/Soncas.unity
+    guid: fe23d7c5f02f6ea45af521c346e6fcc9
   - enabled: 1
     path: Assets/Scenes/Gregoire/Tennis.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Simon/TennisV2.unity
+    guid: d27c0640f80aba998977a56fc4e4ac1c
+  - enabled: 1
     path: Assets/Scenes/Prisciou/VN_Scene.unity
     guid: 13d44a350772c7740b356e02726c9c51
-  - enabled: 1
-    path: Assets/Scenes/Carlos/Soncas.unity
-    guid: fe23d7c5f02f6ea45af521c346e6fcc9
+  - enabled: 0
+    path: Assets/Scenes/Simon/MenuScene.unity
+    guid: 25b64acc69a257b7ab9a55b756902839
+  - enabled: 0
+    path: Assets/Scenes/Menu Principal/Cours/Connaitre son client/CSC en mot.unity
+    guid: 7daaa800f910e1d418eeab09a0f589a4
   m_configObjects: {}
