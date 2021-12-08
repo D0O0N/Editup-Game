@@ -1,7 +1,7 @@
 {
     "intro": {
         "titre": "Sincère ou manipulateur",
-        "client": "Philippe Chatellaine",
+        "client": "Chatellaine",
         "description": "Philippe Chatellaine a bénéficié d'un \"forfait découverte\" qui propose un libre accès à toutes les activités sportives du centre de fitness GymFit. Ce forfait est activé dès la première séance et valable pour une durée de 30 jours. \nPhilippe se rend sur place pour demander le report de son forfait, suite à un déplacement professionnel imprévu qui l'empêchera de bénéficier de l'offre pendant 2 semaines. \nOr, les conditions de ce forfait ne sont pas modifiables et Philippe semble avoir oublié ce qu'il a signé... C'est à vous de jouer !",
         "actionPoints": 14
     },
@@ -14,7 +14,7 @@
                     "idQ": "A_01",
                     "question": "Bonjour Monsieur, soyez le bienvenu. Peut-on vous être utile ?",
                     "réponse": "Bonjour. Oui, je viens pour régler un problème.",
-                    "posture": 0,
+                    "posture": 1,
                     "résultat": {
                         "typeRes": 1
                     }
@@ -23,7 +23,7 @@
                     "idQ": "A_02",
                     "question": "Bonjour Monsieur, bienvenu chez GymFit. Puis-je vous aider ?",
                     "réponse": "Bonjour. Oui, j'ai un problème à régler.",
-                    "posture": 0,
+                    "posture": 1,
                     "résultat": {
                         "typeRes": 1
                     }
@@ -32,7 +32,7 @@
                     "idQ": "A_03",
                     "question": "Bienvenu chez GymFit Monsieur. En quoi puis-je vous aider ?",
                     "réponse": "Bonjour. Je viens régler un problème.",
-                    "posture": 0,
+                    "posture": 1,
                     "résultat": {
                         "typeRes": 1
                     }

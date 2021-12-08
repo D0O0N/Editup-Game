@@ -22,10 +22,14 @@ public class VNManager : MonoBehaviour
     public Button buttonStartVN;
     public TextMeshProUGUI actionPointsTextUI;
     public GoScene goMenu;
+    public Image personnage;
+    public Sprite[] chatellaineEmotions;
+    public Sprite[] picEmotions;
     private VN vn;
     private int cat = 0;
     private int actionPoints;
     private string msgZeroActionPoint = "Vous n'avez plus de points d'actions";
+    private Sprite[] emotions;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +69,19 @@ public class VNManager : MonoBehaviour
         vn = v;
         actionPoints = vn.intro.actionPoints;
         actionPointsTextUI.text = ""+actionPoints;
+        switch (vn.intro.client)
+        {
+            case "Chatellaine":
+                emotions = chatellaineEmotions;
+                break;
+            
+            case "Pic":
+                emotions = picEmotions;
+                break;
+
+            default:
+            break;
+        }
         LoadCat(0);
         levelChoice.SetActive(false);
     }
@@ -84,7 +101,6 @@ public class VNManager : MonoBehaviour
         foreach (Question question in vn.categories[cat].questions)
         {
             AddQuestion(question, false);
-            //Debug.Log(question.question);
         }
     }
 
@@ -137,6 +153,8 @@ public class VNManager : MonoBehaviour
             if (question.idQ.Equals(id))
             {
                 textReponse.text = question.réponse;
+                int nbEmotion = question.posture;
+                personnage.sprite = emotions[nbEmotion];
                 switch (question.résultat.typeRes)
                 {
                     case 0:
