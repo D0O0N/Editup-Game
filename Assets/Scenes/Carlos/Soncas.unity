@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 214120954}
   - component: {fileID: 214120953}
   m_Layer: 5
-  m_Name: Button S
+  m_Name: Button Se
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: s
+          m_StringArgument: se
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &214120954
@@ -1794,21 +1794,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c50889e5e0489459d531cbb7fa9936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionsList:
-  - question 1
-  - question 2
-  - question 3
-  - question 4
-  - question 5
-  - question 6
-  answerList:
-  - s
-  - o
-  - n
-  - c
-  - a
-  - s
-  charactersList:
+  questionsArray:
+  - Question Se
+  - Question O
+  - Question N
+  - Question C
+  - Question A
+  - Question Sy
+  answerArray:
+  - Se
+  - O
+  - N
+  - C
+  - A
+  - Sy
+  charactersArray:
   - {fileID: 21300000, guid: 24b44cef98db28e42be936f278ca6ee8, type: 3}
   - {fileID: 21300000, guid: e4afaaa916c4f9345b4c7a3e3e74c2e3, type: 3}
   - {fileID: 21300000, guid: 8817f57cfc27f0f458c9b3b058d65d90, type: 3}
@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 2012414617}
   - component: {fileID: 2012414616}
   m_Layer: 5
-  m_Name: Button S
+  m_Name: Button Sy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2056,7 +2056,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
           m_FloatArgument: 0
-          m_StringArgument: s
+          m_StringArgument: sy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2012414617
