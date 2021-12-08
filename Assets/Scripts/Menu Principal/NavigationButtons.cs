@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NavigationButtons : MonoBehaviour
 {
@@ -14,5 +15,20 @@ public class NavigationButtons : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GoToScene(int id)
+    {
+        SceneManager.LoadScene(id);
+    }
+
+    public void GoToScene(string id)
+    {
+        SceneManager.LoadScene(id);
+    }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
     }
 }
