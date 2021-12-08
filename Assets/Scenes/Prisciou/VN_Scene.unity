@@ -483,6 +483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fichiersJson:
   - {fileID: 4900000, guid: 8218791206c2a2d48a3562b061b10da6, type: 3}
+  - {fileID: 4900000, guid: 8218791206c2a2d48a3562b061b10da6, type: 3}
+  - {fileID: 4900000, guid: 3c86d7de01c13dd42ac79e2c9dd2ab29, type: 3}
   - {fileID: 4900000, guid: 3c86d7de01c13dd42ac79e2c9dd2ab29, type: 3}
   prefabButtonQuestion: {fileID: 1059094575972848630, guid: f0e83cfe70357494c93436d4fb87131b,
     type: 3}
@@ -1260,7 +1262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1063069751
 RectTransform:
   m_ObjectHideFlags: 0
