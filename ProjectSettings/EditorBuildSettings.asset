@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu Principal/Menu Principal.unity
+    guid: f57beaa4a8c6fe74cb774b4393a6ad1a
+  - enabled: 1
+    path: Assets/Scenes/Menu Principal/Menu Cours.unity
+    guid: cff90a5fb7f85ee4dbce82274139765d
+  - enabled: 1
     path: Assets/Scenes/Gwen/Damier.unity
     guid: 8b1afcce69a6a084790db25cb3293c15
   - enabled: 1
