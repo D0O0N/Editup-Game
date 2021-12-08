@@ -1,4 +1,9 @@
 {
+    "intro": {
+        "titre": "Sincère ou manipulateur",
+        "client": "Philippe Chatellaine",
+        "description": "Philippe Chatellaine a bénéficié d'un \"forfait découverte\" qui propose un libre accès à toutes les activités sportives du centre de fitness GymFit. Ce forfait est activé dès la première séance et valable pour une durée de 30 jours. \nPhilippe se rend sur place pour demander le report de son forfait, suite à un déplacement professionnel imprévu qui l'empêchera de bénéficier de l'offre pendant 2 semaines. \nOr, les conditions de ce forfait ne sont pas modifiables et Philippe semble avoir oublié ce qu'il a signé... C'est à vous de jouer !"
+    },
     "categories": [
         {
             "Catégorie": 0,

@@ -1,0 +1,428 @@
+{
+    "intro": {
+        "titre": "Sincère ou manipulateur",
+        "client": "Chatellaine",
+        "description": "Philippe Chatellaine a bénéficié d'un \"forfait découverte\" qui propose un libre accès à toutes les activités sportives du centre de fitness GymFit. Ce forfait est activé dès la première séance et valable pour une durée de 30 jours. \nPhilippe se rend sur place pour demander le report de son forfait, suite à un déplacement professionnel imprévu qui l'empêchera de bénéficier de l'offre pendant 2 semaines. \nOr, les conditions de ce forfait ne sont pas modifiables et Philippe semble avoir oublié ce qu'il a signé... C'est à vous de jouer !",
+        "actionPoints": 14
+    },
+    "categories": [
+        {
+            "Catégorie": 0,
+            "NomCatégorie": "Accueillir le client",
+            "questions": [
+                {
+                    "idQ": "A_01",
+                    "question": "Bonjour Monsieur, soyez le bienvenu. Peut-on vous être utile ?",
+                    "réponse": "Bonjour. Oui, je viens pour régler un problème.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                },
+                {
+                    "idQ": "A_02",
+                    "question": "Bonjour Monsieur, bienvenu chez GymFit. Puis-je vous aider ?",
+                    "réponse": "Bonjour. Oui, j'ai un problème à régler.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                },
+                {
+                    "idQ": "A_03",
+                    "question": "Bienvenu chez GymFit Monsieur. En quoi puis-je vous aider ?",
+                    "réponse": "Bonjour. Je viens régler un problème.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ]
+        },
+        {
+            "Catégorie": 1,
+            "NomCatégorie": "Comprendre le besoin",
+            "questions": [
+                {
+                    "idQ": "Q_01",
+                    "question": "Je vous écoute. Dites moi quel est le problème ?",
+                    "réponse": "Voilà : j'ai souscrit à un forfait d'essai pour un mois la semaine dernière et je viens d'apprendre que je dois partir demain en mission pour deux semaines... Je viens donc reporter ce forfait de 2 semaines.",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Evitez d'utiliser le mot \"problème\" dans vos discussions avec vos clients."
+                    }
+                },
+                {
+                    "idQ": "Q_02",
+                    "question": "Pouvez-vous m'expliquer votre problème ?",
+                    "réponse": "Je pars demain en mission et je viens pour étendre de deux semaines mon forfait d'essai.",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Evitez d'utiliser le mot \"problème\" dans vos discussions avec vos clients."
+                    }
+                },
+                {
+                    "idQ": "Q_03",
+                    "question": "Pouvez-vous me dire de quoi il s'agit ?",
+                    "réponse": "Je dois m'absenter pour deux semaines : je viens pour reporter le délai de validité de mon forfait d'essai de deux semaines.",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                },
+                {
+                    "idQ": "Q4",
+                    "question": "Nous n'avons que des solutions !!!",
+                    "réponse": "Eh bien tant mieux parce que là, ça ne va pas vraiment !",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q5",
+                    "question": "Nous allons le résoudre, ne vous inquiétez pas.",
+                    "réponse": "Je ne m'inquiète pas !",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Evitez la formule \"ne vous inquiétez pas\". Elle agace un grand nombre de personne !"
+                    }
+                },
+                {
+                    "idQ": "Q6",
+                    "question": "Ah ça peut arriver. Nous avons l'habitude, je vous écoute.",
+                    "réponse": "Bon si c'est comme ça... ",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous invitez votre client à s'exprimer, c'est la bonne attitude relationnelle."
+        },
+        {
+            "Catégorie": 2,
+            "NomCatégorie": "Gérer la réclamation",
+            "questions": [
+                {
+                    "idQ": "Q_08",
+                    "question": "De quel forfait parlez-vous ?",
+                    "réponse": "Je ne sais plus. Je me souviens juste que c'était un forfait valable 1 mois.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_09",
+                    "question": "Pouvez-vous me donner des précisions sur ce forfait auquel vous avez souscrit ?",
+                    "réponse": "Je me souviens que c'était une offre de découverte valable 1 mois.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 2,
+                        "questDébloq": [
+                            {
+                                "idQ": "Q_07"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "idQ": "Q_10",
+                    "question": "Je suis désolée mais nous n'avons pas de forfait d'essai.",
+                    "réponse": "C'est pourtant bien ce que vous m'avez vendu !",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_11",
+                    "question": "Ah.... Il faut que vous m'en disiez un peu plus !",
+                    "réponse": "C'est vous qui devez savoir de quoi il s'agit !",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_12",
+                    "question": "Nous allons régler cela, ne vous inquiétez pas.",
+                    "réponse": "Parfait.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Evitez la formule \"ne vous inquiétez pas\". Elle agace un grand nombre de personne !"
+                    }
+                }
+            ],
+            "questionsDéblocables": [
+                {
+                    "idQ": "Q_07",
+                    "question": "Vous faites référence au \"forfait découverte\", sans doute ? ",
+                    "réponse": "Oui ça doit être cela.",
+                    "posture": 1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous adoptez la technique de reformulation pour valider la compréhension de la situation, c'est la bonne attitude, continuez."
+        },
+        {
+            "Catégorie": 3,
+            "NomCatégorie": "Répondre et argumenter",
+            "questions": [
+                {
+                    "idQ": "Q_13",
+                    "question": "J'ai bien peur que cela soit impossible, monsieur.",
+                    "réponse": "Sauf que je n'y suis pour rien dans mon changement de programme.",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_14",
+                    "question": "Malheureusement, il est impossible de décaler les périodes de validité de ce forfait.",
+                    "réponse": "Mais la dernière fois, on m'a dit que c'était possible !",
+                    "posture": 0,
+                    "résultat": {
+                        "typeRes": 2,
+                        "questDébloq": [
+                            {
+                                "idQ": "Q_19"
+                            },
+                            {
+                                "idQ": "Q_20"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "idQ": "Q_15",
+                    "question": "Ce forfait est effectivement très avantageux mais hélas, non flexible.",
+                    "réponse": "Vous vous moquez de moi ? On m'avait dit qu'en cas de force majeure, on pouvait décaler sans problème !",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_16",
+                    "question": "Avez-vous pris connaissance des conditions de ce forfait découverte avant de signer ?",
+                    "réponse": "On m'a dit qu'en cas de force majeure, on pouvait décaler la période de validité.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Ne mettez jamais votre client en défaut, surtout lorsque vous avez à faire à un client manipulateur !"
+                    }
+                },
+                {
+                    "idQ": "Q_17",
+                    "question": "Ce n'est absolument pas possible monsieur. Qui vous a renseigné à l'époque ?",
+                    "réponse": "Comment voulez-vous que je me souvienne ?",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Vous faites une digression alors que ce forfait n'est pas modifiable. Votre client vous manipule, volontairement ou pas, et vous ne devez pas aller dans son sens. Il faut rappeler clairement les termes du forfait auquel il a souscrit."
+                    }
+                },
+                {
+                    "idQ": "Q_18",
+                    "question": "Vous souvenez-vous de la date de votre souscription ?",
+                    "réponse": "Je n'en sais rien moi ! C'est à vous de me dire.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Vous faites une digression alors que ce forfait n'est pas modifiable. Votre client vous manipule, volontairement ou pas, et vous ne devez pas aller dans son sens. Il faut rappeler clairement les termes du forfait auquel il a souscrit."
+                    }
+                }
+            ],
+            "questionsDéblocables": [
+                {
+                    "idQ": "Q_19",
+                    "question": "Vous souvenez-vous de la personne qui vous a renseigné ?",
+                    "réponse": "Comment voulez-vous que je m'en souvienne ?",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Vous faites une digression alors que ce forfait n'est pas modifiable. Votre client vous manipule, volontairement ou pas, et vous ne devez pas aller dans son sens. Il faut rappeler clairement les termes du forfait auquel il a souscrit."
+                    }
+                },
+                {
+                    "idQ": "Q_20",
+                    "question": "Je vous propose de relire le contrat que vous avez signé.",
+                    "réponse": "Mais je n'ai pas que ça à faire, moi ! Comment pouvez-vous être si peu professionnels ?",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 2,
+                        "questDébloq": [
+                            {
+                                "idQ": "Q_21"
+                            },
+                            {
+                                "idQ": "Q_22"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "idQ": "Q_21",
+                    "question": "Où voulez vous en venir monsieur ?",
+                    "réponse": "Nulle part. Je veux des explications, c'est tout.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                },
+                {
+                    "idQ": "Q_22",
+                    "question": "Qu'est-ce qui vous fait dire que nous ne sommes pas professionnels ?",
+                    "réponse": "Vous ne vous préoccupez pas des contraintes de vos clients... ! C'est pourtant le B-A BA de la relation client.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous annoncez clairement et sans digression que ce forfait n'est pas modifiable. C'est le bon réflexe dans ce type de situation."
+        },
+        {
+            "Catégorie": 4,
+            "NomCatégorie": "Adopter les attitudes relationnelles clé",
+            "questions": [
+                {
+                    "idQ": "Q_23",
+                    "question": "Je comprends bien votre déception monsieur, mais ce sont les termes du contrat que vous avez signé.",
+                    "réponse": "C'est vraiment dommage effectivement.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 2,
+                        "questDébloq": [
+                            {
+                                "idQ": "Q_24"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "idQ": "Q_25",
+                    "question": "Il est important de lire les termes d'un contrat que l'on signe.",
+                    "réponse": "Mais pour qui vous prenez-vous ?",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_26",
+                    "question": "Peut-être n'avez-vous pas compris les termes exacts de ce forfait ?",
+                    "réponse": "Bien sûr que si ! Je vous demande juste de me faire un report de 2 semaines...",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 3,
+                        "raisonGO": "Ne mettez jamais votre client en défaut, surtout lorsque vous avez à faire à un client manipulateur !"
+                    }
+                },
+                {
+                    "idQ": "Q_27",
+                    "question": "Est-ce qu'un café vous ferait plaisir ?",
+                    "réponse": "Non merci.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_28",
+                    "question": "Avez-vous au moins apprécié les premières séances chez nous ?",
+                    "réponse": "Je n'ai pas vraiment eu le temps de tester quoi que ce soit....Et je suis vraiment déçu.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                }
+            ],
+            "questionsDéblocables": [
+                {
+                    "idQ": "Q_24",
+                    "question": "Je suis absolument désolé monsieur mais je ne peux pas faire d'exception à la règle.",
+                    "réponse": "Je m'en fiche que vous soyez désolé.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous restez factuel dans le traitement de cette réclamation, c'est la seule manière de ne pas vous laisser piéger par un client manipulateur."
+        },
+        {
+            "Catégorie": 5,
+            "NomCatégorie": "Cloturer la demande",
+            "questions": [
+                {
+                    "idQ": "Q_29",
+                    "question": "Je vous propose de regarder ensemble les différents forfaits que nous proposons : il y en a forcément un adapté à votre rythme professionnel.",
+                    "réponse": "Si vous voulez mais je suis franchement déçu.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                },
+                {
+                    "idQ": "Q_30",
+                    "question": "Les autres forfaits sont beaucoup plus flexibles, mais celui-ci n'est pas du tout modifiable.",
+                    "réponse": "Oui j'ai compris.....",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_32",
+                    "question": "Sur ce sujet, je ne peux rien faire mais auriez-vous d'autres souhaits ?",
+                    "réponse": "Non, là vraiment je suis très déçu et je n'ai pas envie de revenir.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_33",
+                    "question": "Souhaitez-vous faire une réclamation ?",
+                    "réponse": "Ah oui alors !",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                },
+                {
+                    "idQ": "Q_34",
+                    "question": "Souhaiteriez-vous rencontrer notre manager ?",
+                    "réponse": "Oui allez me le chercher sur le champ !",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 0
+                    }
+                }
+            ],
+            "questionsDéblocables": [
+                {
+                    "idQ": "Q_24",
+                    "question": "Je suis absolument désolé monsieur mais je ne peux pas faire d'exception à la règle.",
+                    "réponse": "Je m'en fiche que vous soyez désolé.",
+                    "posture": -1,
+                    "résultat": {
+                        "typeRes": 1
+                    }
+                }
+            ],
+            "analyseFinCat": "Vous concluez l'échange en vous mettant en recherche de solution, c'est un moyen efficace de contrer des arguments non fondés"
+        }
+    ],
+    "TexteFin": "Vous avez géré ce client de mauvaise foi en canalisant la discussion. En restant ferme et factuel sur les conditions du contrat, vous avez évité de lui laisser la possiblité d'argumenter inutilement."
+}

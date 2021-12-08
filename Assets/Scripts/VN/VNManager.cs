@@ -11,27 +11,86 @@ public class VNManager : MonoBehaviour
     public Transform questionsParent;
     public TextMeshProUGUI textReponse;
     public GameObject popup;
+    public TextMeshProUGUI popupTitle;
+    public TextMeshProUGUI popupText;
     public GameObject endLevel;
+    public GameObject levelChoice;
+    public Transform VNParent;
+    public TextMeshProUGUI titreVN;
+    public TextMeshProUGUI nomPerso;
+    public TextMeshProUGUI descriptionVN;
+    public Button buttonStartVN;
+    public TextMeshProUGUI actionPointsTextUI;
+    public GoScene goMenu;
+    public Image personnage;
+    public Sprite[] chatellaineEmotions;
+    public Sprite[] picEmotions;
     private VN vn;
-    private int VNnb = 0;
     private int cat = 0;
+    private int actionPoints;
+    private string msgZeroActionPoint = "Vous n'avez plus de points d'actions";
+    private Sprite[] emotions;
     // Start is called before the first frame update
     void Start()
     {
-        vn = JsonUtility.FromJson<VN>(fichiersJson[VNnb].text);
-        /*
-        foreach (Categorie categorie in vn.categories)
-        {
-            Debug.Log(categorie.NomCatégorie);
-        }
-        */
-        LoadCat(0);
+        SearchVN();
+        //LoadVN(nb);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private void SearchVN()
+    {
+        foreach (TextAsset fichier in fichiersJson)
+        {
+            VN jeu = JsonUtility.FromJson<VN>(fichier.text);
+            GameObject button = Instantiate(prefabButtonQuestion);
+            button.transform.SetParent(VNParent);
+            button.name = jeu.intro.titre;
+            button.GetComponentInChildren<TextMeshProUGUI>().text = jeu.intro.titre;
+            button.GetComponent<Button>().onClick.AddListener(() => ViewDescVN(jeu));
+        }
+    }
+
+    private void ViewDescVN(VN v)
+    {
+        titreVN.text = v.intro.titre;
+        nomPerso.text = v.intro.client;
+        descriptionVN.text = v.intro.description;
+        buttonStartVN.GetComponent<Button>().onClick.AddListener(() => LoadVN(v));
+    }
+
+    private void LoadVN(VN v)
+    {
+        vn = v;
+        actionPoints = vn.intro.actionPoints;
+        actionPointsTextUI.text = ""+actionPoints;
+        switch (vn.intro.client)
+        {
+            case "Chatellaine":
+                emotions = chatellaineEmotions;
+                break;
+            
+            case "Pic":
+                emotions = picEmotions;
+                break;
+
+            default:
+            break;
+        }
+        LoadCat(0);
+        levelChoice.SetActive(false);
+    }
+
+    private void LoadVN(int nb)
+    {
+        vn = JsonUtility.FromJson<VN>(fichiersJson[nb].text);
+        actionPoints = vn.intro.actionPoints;
+        LoadCat(0);
     }
 
     private void LoadCat(int nbCat)
@@ -42,7 +101,6 @@ public class VNManager : MonoBehaviour
         foreach (Question question in vn.categories[cat].questions)
         {
             AddQuestion(question, false);
-            //Debug.Log(question.question);
         }
     }
 
@@ -59,7 +117,8 @@ public class VNManager : MonoBehaviour
     {
         if (cat != 0)
         {
-            popup.GetComponentInChildren<TextMeshProUGUI>().text = vn.categories[cat].analyseFinCat;
+            popupTitle.text = "";
+            popupText.text = vn.categories[cat].analyseFinCat;
             popup.SetActive(true);
         }
         cat += 1;
@@ -75,10 +134,13 @@ public class VNManager : MonoBehaviour
 
     private void QuestSelect(string id, bool debloq)
     {
+        actionPoints--;
+        actionPointsTextUI.text = ""+actionPoints;
         if (debloq)
         {
-            QuestSelect(id,vn.categories[cat].questionsDéblocables);
-        } else
+            QuestSelect(id, vn.categories[cat].questionsDéblocables);
+        }
+        else
         {
             QuestSelect(id, vn.categories[cat].questions);
         }
@@ -91,6 +153,8 @@ public class VNManager : MonoBehaviour
             if (question.idQ.Equals(id))
             {
                 textReponse.text = question.réponse;
+                int nbEmotion = question.posture;
+                personnage.sprite = emotions[nbEmotion];
                 switch (question.résultat.typeRes)
                 {
                     case 0:
@@ -117,8 +181,11 @@ public class VNManager : MonoBehaviour
                     default:
                         break;
                 }
-
             }
+        }
+        if (actionPoints<1)
+        {
+            GameOver(msgZeroActionPoint);
         }
     }
 
@@ -138,14 +205,16 @@ public class VNManager : MonoBehaviour
 
     private void FinPartie()
     {
-        Debug.Log("Gagné!");
         endLevel.GetComponentInChildren<TextMeshProUGUI>().text = vn.TexteFin;
         endLevel.SetActive(true);
     }
 
     private void GameOver(string raison)
     {
-        popup.GetComponentInChildren<TextMeshProUGUI>().text = raison;
+        popupTitle.text = "GAME OVER";
+        popupText.text = raison;
+        popup.GetComponentInChildren<Button>().onClick.AddListener(() => goMenu.LoadScene());
+        popup.GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = "Quitter";
         popup.SetActive(true);
     }
 
