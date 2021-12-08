@@ -45,7 +45,8 @@ public class SpawnObject : MonoBehaviour
             {
                 Rigidbody clone;
                 random = Random.Range(0, data.GetLength(0));
-                clone = Instantiate(ball, transform.position + new Vector3(Random.Range(-5f, 5f), -1.5f, 0), transform.rotation);
+                clone = Instantiate(ball, transform.position + new Vector3(Random.Range(-4f, 4f), -1.5f, 0), transform.rotation);
+                clone.transform.GetChild(0).transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
                 clone.gameObject.GetComponent<BallBehavior>().startTimer();
                 clone.gameObject.GetComponent<BallBehavior>().type = data[random, 1];
                 Sentence.text = data[random, 0];

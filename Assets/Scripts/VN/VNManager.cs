@@ -34,7 +34,17 @@ public class VNManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SearchVN();
+        int comp = PlayerPrefs.GetInt("ActualCompetence", 666);
+        if (comp.Equals(666))
+        {
+            SearchVN();
+            levelChoice.SetActive(true);
+        }
+        else
+        {
+            LoadVN(comp);
+        }
+        
         //LoadVN(nb);
     }
 
