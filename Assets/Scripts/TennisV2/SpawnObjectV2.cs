@@ -15,10 +15,13 @@ public class SpawnObjectV2 : MonoBehaviour
     private int random;
     public UnityEngine.UI.Text Sentence;
     private string[,] data;
-    public bool end = false;
-    public Button btnMenu;
-    public Button btnRestart;
-    public float minDistance = 1;
+    private bool stopGame = false;
+    public GameObject spawn1;
+    public GameObject spawn2;
+    public Sprite spriteBallF;
+    public Sprite spriteBallI;
+    //public Button btnMenu;
+    //public Button btnRestart;
 
     // Start is called before the first frame update
     void Start()
@@ -34,18 +37,59 @@ public class SpawnObjectV2 : MonoBehaviour
                 {"Il n'est jamais là", "I"}
             };
 
-        btnMenu.onClick.AddListener(goMenu);
-        btnRestart.onClick.AddListener(restart);
+        //btnMenu.onClick.AddListener(goMenu);
+        //btnRestart.onClick.AddListener(restart);
+    }
+
+    public void stoop()
+    {
+        stopGame = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!end) {
+        if (!stopGame) {
             timeLeft -= Time.deltaTime;
             if (timeLeft < 0)
             {
                 Rigidbody clone;
+                Rigidbody clone2;
+                random = Random.Range(0, data.GetLength(0));
+
+                Vector3 pos1 = new Vector3(Random.Range(-5f, 5f), 0, 0);
+                Vector3 pos2 = new Vector3(Random.Range(-5f, 5f), 0, 0);
+                //Vector3 pos1 = spawn1.transform.position;
+                //Vector3 pos2 = spawn2.transform.position;
+
+                clone = Instantiate(ball, transform.position + pos1, transform.rotation);
+                clone2 = Instantiate(ball, transform.position + pos2, transform.rotation);
+
+                clone.transform.GetChild(0).transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
+                clone2.transform.GetChild(0).transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
+
+                clone.gameObject.GetComponent<BallBehaviorV2>().startTimer();
+                clone2.gameObject.GetComponent<BallBehaviorV2>().startTimer();
+
+                if (data[random, 1] == "F") {
+                    clone.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteBallF;
+                    clone.gameObject.GetComponent<BallBehaviorV2>().type = "F";
+                    clone.gameObject.GetComponent<BallBehaviorV2>().rep = "F";
+                    clone2.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteBallI;
+                    clone2.gameObject.GetComponent<BallBehaviorV2>().type = "I";
+                    clone2.gameObject.GetComponent<BallBehaviorV2>().rep = "F";
+                } else {
+                    clone.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteBallI;
+                    clone.gameObject.GetComponent<BallBehaviorV2>().type = "I";
+                    clone.gameObject.GetComponent<BallBehaviorV2>().rep = "I";
+                    clone2.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteBallF;
+                    clone2.gameObject.GetComponent<BallBehaviorV2>().type = "F";
+                    clone2.gameObject.GetComponent<BallBehaviorV2>().rep = "I";
+                }
+
+                Sentence.text = data[random, 0];
+                timeLeft = Random.Range(minTime, maxTime);
+                /*Rigidbody clone;
                 Rigidbody clone2;
                 random = Random.Range(0, data.GetLength(0));
 
@@ -62,8 +106,6 @@ public class SpawnObjectV2 : MonoBehaviour
                 clone.velocity = transform.TransformDirection(Vector3.down * Speed);
                 clone2.velocity = transform.TransformDirection(Vector3.down * Speed);
 
-                //clone.gameObject.GetComponent<BallBehavior>().type = data[random,1];
-                //clone2.gameObject.GetComponent<BallBehavior>().type = data[random,1];
                 Sentence.text = data[random,0];
 
                 if (data[random, 1] == "F") {
@@ -73,8 +115,6 @@ public class SpawnObjectV2 : MonoBehaviour
                     clone2.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                     clone2.gameObject.GetComponent<BallBehaviorV2>().type = "I";
                     clone2.gameObject.GetComponent<BallBehaviorV2>().rep = "F";
-                    /*clone.gameObject.AddComponent<Text>();
-                    clone.gameObject.GetComponent<Text>().text = "P";*/
                 } else {
                     clone.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                     clone.gameObject.GetComponent<BallBehaviorV2>().type = "I";
@@ -84,7 +124,7 @@ public class SpawnObjectV2 : MonoBehaviour
                     clone2.gameObject.GetComponent<BallBehaviorV2>().rep = "I";
                 }
 
-                timeLeft = Random.Range(minTime, maxTime);
+                timeLeft = Random.Range(minTime, maxTime);*/
             }
         }
     }
