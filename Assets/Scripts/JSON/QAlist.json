@@ -1,1 +1,11 @@
-{"questions":["question securite","question orgueil","question 3","question 4","question 5","question 6"],"answers":["s","o","n","c","a","s"]}
+{
+"questions":
+	[
+	"Y-a-t-il des protections à l’arrière ?",
+	"Je ne veux pas ressembler à « monsieur tout le monde »",
+	"C’est le tout dernier de la gamme ?",
+	"Je voudrais quelque chose de pratique",
+	"Et ça coute combien ?",
+	"C’est pour les 50 ans de mon père."
+	],
+"answers":["se","o","n","c","a","sy"]}
