@@ -11,6 +11,8 @@ public class VNManager : MonoBehaviour
     public Transform questionsParent;
     public TextMeshProUGUI textReponse;
     public GameObject popup;
+    public TextMeshProUGUI popupTitle;
+    public TextMeshProUGUI popupText;
     public GameObject endLevel;
     public GameObject levelChoice;
     public Transform VNParent;
@@ -18,12 +20,17 @@ public class VNManager : MonoBehaviour
     public TextMeshProUGUI nomPerso;
     public TextMeshProUGUI descriptionVN;
     public Button buttonStartVN;
+    public TextMeshProUGUI actionPointsTextUI;
+    public GoScene goMenu;
     private VN vn;
     private int cat = 0;
+    private int actionPoints;
+    private string msgZeroActionPoint = "Vous n'avez plus de points d'actions";
     // Start is called before the first frame update
     void Start()
     {
         SearchVN();
+        //LoadVN(nb);
     }
 
     // Update is called once per frame
@@ -56,6 +63,8 @@ public class VNManager : MonoBehaviour
     private void LoadVN(VN v)
     {
         vn = v;
+        actionPoints = vn.intro.actionPoints;
+        actionPointsTextUI.text = ""+actionPoints;
         LoadCat(0);
         levelChoice.SetActive(false);
     }
@@ -63,6 +72,7 @@ public class VNManager : MonoBehaviour
     private void LoadVN(int nb)
     {
         vn = JsonUtility.FromJson<VN>(fichiersJson[nb].text);
+        actionPoints = vn.intro.actionPoints;
         LoadCat(0);
     }
 
@@ -91,7 +101,8 @@ public class VNManager : MonoBehaviour
     {
         if (cat != 0)
         {
-            popup.GetComponentInChildren<TextMeshProUGUI>().text = vn.categories[cat].analyseFinCat;
+            popupTitle.text = "";
+            popupText.text = vn.categories[cat].analyseFinCat;
             popup.SetActive(true);
         }
         cat += 1;
@@ -107,6 +118,8 @@ public class VNManager : MonoBehaviour
 
     private void QuestSelect(string id, bool debloq)
     {
+        actionPoints--;
+        actionPointsTextUI.text = ""+actionPoints;
         if (debloq)
         {
             QuestSelect(id, vn.categories[cat].questionsDéblocables);
@@ -150,8 +163,11 @@ public class VNManager : MonoBehaviour
                     default:
                         break;
                 }
-
             }
+        }
+        if (actionPoints<1)
+        {
+            GameOver(msgZeroActionPoint);
         }
     }
 
@@ -171,14 +187,16 @@ public class VNManager : MonoBehaviour
 
     private void FinPartie()
     {
-        Debug.Log("Gagné!");
         endLevel.GetComponentInChildren<TextMeshProUGUI>().text = vn.TexteFin;
         endLevel.SetActive(true);
     }
 
     private void GameOver(string raison)
     {
-        popup.GetComponentInChildren<TextMeshProUGUI>().text = raison;
+        popupTitle.text = "GAME OVER";
+        popupText.text = raison;
+        popup.GetComponentInChildren<Button>().onClick.AddListener(() => goMenu.LoadScene());
+        popup.GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text = "Quitter";
         popup.SetActive(true);
     }
 
