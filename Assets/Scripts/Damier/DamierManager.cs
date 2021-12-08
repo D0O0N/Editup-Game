@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DamierManager : MonoBehaviour
 {
-    public TextMeshProUGUI textTime;
+    //public TextMeshProUGUI textTime;
     public TextMeshProUGUI textQuestion;
     public TextMeshProUGUI textEnd;
     public GameObject[] linePlacement;
@@ -23,7 +24,7 @@ public class DamierManager : MonoBehaviour
     public Transform player;
 
     private float nextActionTime = 0.0f;
-    private float period = 0.02f;                                                                                                                                                                           
+    //private float period = 0.02f;                                                                                                                                                                           
     string data = "Quelles sont les raisons de votre voyage ?;Fermé; Ouverte; 1 _Y êtes vous-déjà allé ?;Fermé; Ouverte;0_Pourquoi dites vous cela ?;Fermé; Ouverte;1_Que lui reprochez vous ?;Fermé; Ouverte;1_Quel est votre budget ?;Fermé; Ouverte;0_Que souhaitez vous faire ?;Fermé; Ouverte;1_Quand partez-vous ?;Fermé; Ouverte;0_Préférez-vous la mer ou la montagne ?;Fermé; Ouverte;0";
     
     string question;
@@ -35,10 +36,11 @@ public class DamierManager : MonoBehaviour
 
     string[] answer;
     int score = 0;
+    public int endScore = 8;
 
-    float startTime = 10;
-    double timeLeft;
-    bool inGame = true;
+    //float startTime = 10;
+    //double timeLeft;
+    //bool inGame = true;
  
     // Start is called before the first frame update
     void Start()
@@ -57,9 +59,9 @@ public class DamierManager : MonoBehaviour
         
         score = 0;
         nextActionTime = Time.time;
-        inGame = true;
+        //inGame = true;
         endLevelPopup.SetActive(false);
-        timeLeft = startTime;
+        //timeLeft = startTime;
         // Reset
         questions =  new List<string>();
         actualQuestion = 0;
@@ -67,7 +69,7 @@ public class DamierManager : MonoBehaviour
         ReadData(data);
         SpawnLevel();
         UpdateVisual();
-        StartTimer(1);
+        //StartTimer(1);
     }
 
 
@@ -108,7 +110,11 @@ public class DamierManager : MonoBehaviour
         
         if (actualQuestion < questions.Count)
             UpdateVisual();
-        else
+        else{
+            actualQuestion = 0;
+            UpdateVisual();
+        }
+        if (score >= endScore)
             EndLevel();
             
     }
@@ -131,25 +137,27 @@ public class DamierManager : MonoBehaviour
     void FixedUpdate()
     {
         //Moves the GameObject from it's current position to destination over time
-        //player.position = Vector2.Lerp(player.position, target.position, Time.deltaTime*2);
+
 
         player.position = Vector2.MoveTowards(player.position, target.position, 15);
-        //nextLine.position = Vector2.Lerp(nextLine.position, playerLine.position, Time.deltaTime*2);
 
-        UpdateTimeBar();
+        //UpdateTimeBar();
         
     }
     void Update(){
+        /*
+
         if (inGame && Time.time > nextActionTime ) {
             UpdateTimeBar();
             nextActionTime += period;
-            timeLeft -= period;
+            //timeLeft -= period;
             //textTime.text = Mathf.Ceil((float)timeLeft).ToString();
-            textTime.text = (Mathf.Round((float)(timeLeft * 10)) / 10).ToString();
+            //textTime.text = (Mathf.Round((float)(timeLeft * 10)) / 10).ToString();
             if (timeLeft < 0){
                 EndLevel();
             }
         }
+        */
     }
 
     // Split la donnée pour question / answer[] / goodAnswer
@@ -201,24 +209,27 @@ public class DamierManager : MonoBehaviour
     void EndQuestion(bool win){
         if (win){
             score += 1;
-            timeLeft += 1;
+            //timeLeft += 1;
         }
         else
         {
-            timeLeft -= 1;
+            score = 0;
+            //timeLeft -= 1;
         }
     }
 
     // Update visual Bar
+    /*
     void UpdateTimeBar(){
         HealthBarHandler.SetHealthBarValue((float)(timeLeft / startTime));
         //HealthBarHandler.SetHealthBarValue(startTime / timeLeft);
 
     }
+    */
 
     // 
     void EndLevel(){
-        inGame = false;
+        //inGame = false;
         ShowEndLevel();
     }
     void ShowEndLevel(){
