@@ -21,15 +21,16 @@ public class SpawnObjectV2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Sentence.text = "Bonjour";
+        //Sentence.text = "Bonjour";
         data = new string[,] {
-                { "10 jours de d�lai c�est trop long : notre salon est mardi", "R"}, 
-                {"Votre documentation n�est pas claire", "P"}, 
-                {"Il faut que je r�fl�chisse", "P"},
-                {"Nous sommes plusieurs � d�cider", "P"},
-                {"Notre budget fourniture est limit� � 10K� par mois", "R"},
-                {"Nous serons en cong�s cette semaine", "R"},
-                {"Ce n�est pas moi qui d�cide", "P"},
+                {"Tu es toujours absente", "I"}, 
+                {"Il n'aime pas les réunions", "I"}, 
+                {"Il est arrivé à 10 heures 30", "F"},
+                {"Il n'a pas invité Agnés", "F"},
+                {"Il n'appelle jamais", "I"},
+                {"Il n'a pas apporté son contrat", "F"},
+                {"Il n'a jamais ses affaires sur lui", "I"},
+                {"Il n'est jamais là", "I"}
             };
 
         btnMenu.onClick.AddListener(goMenu);
@@ -49,7 +50,7 @@ public class SpawnObjectV2 : MonoBehaviour
                 clone.gameObject.GetComponent<BallBehavior>().type = data[random,1];
                 Sentence.text = data[random,0];
 
-                if (data[random, 1] == "R") {
+                if (data[random, 1] == "F") {
                     clone.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                     /*clone.gameObject.AddComponent<Text>();
                     clone.gameObject.GetComponent<Text>().text = "P";*/

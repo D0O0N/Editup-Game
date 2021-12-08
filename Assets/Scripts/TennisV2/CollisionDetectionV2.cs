@@ -14,12 +14,12 @@ public class CollisionDetectionV2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "F")
         {
             score = 0;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.GetComponent<BallBehavior>().type == "R")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "I")
         {
             score = score + 1;
             Destroy(other.gameObject);
