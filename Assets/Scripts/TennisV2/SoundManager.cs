@@ -16,14 +16,12 @@ public class SoundManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
-        {
-            src.clip = srcBad;
-            src.Play();
-        }
-        if (other.gameObject.GetComponent<BallBehavior>().type == "R")
+        if (other.gameObject.GetComponent<BallBehaviorV2>().type == other.gameObject.GetComponent<BallBehaviorV2>().rep)
         {
             src.clip = srcGood;
+            src.Play();
+        } else {
+            src.clip = srcBad;
             src.Play();
         }
     }

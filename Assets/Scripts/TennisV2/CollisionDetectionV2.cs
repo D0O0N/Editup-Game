@@ -14,14 +14,12 @@ public class CollisionDetectionV2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BallBehavior>().type == "F")
-        {
-            score = 0;
-            Destroy(other.gameObject);
-        }
-        if (other.gameObject.GetComponent<BallBehavior>().type == "I")
+        if (other.gameObject.GetComponent<BallBehaviorV2>().type == other.gameObject.GetComponent<BallBehaviorV2>().rep)
         {
             score = score + 1;
+            Destroy(other.gameObject);
+        } else {
+            score = 0;
             Destroy(other.gameObject);
         }
         if (other.gameObject.name == "WhateverYouWant")
@@ -31,7 +29,7 @@ public class CollisionDetectionV2 : MonoBehaviour
 
         txtScore.text = "Score : " + score + " sur 8";
 
-        if (score == 2) {
+        if (score == 8) {
             spawner.GetComponent<SpawnObjectV2>().end = true;
             chara.SetActive(false);
             endScreen.SetActive(true);
