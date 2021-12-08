@@ -7,6 +7,9 @@ public class LifeBarBehavior : MonoBehaviour
 
     public float decreaseSpeed = 0.01f;
     private Animator animator;
+    public GameObject spawner;
+    public GameObject character;
+    public GameObject winScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +21,18 @@ public class LifeBarBehavior : MonoBehaviour
     {
         float currentValue = animator.GetFloat("Status");
         animator.SetFloat("Status", currentValue - Time.deltaTime * decreaseSpeed);
+        if(currentValue == 1f)
+        {
+            spawner.GetComponent<SpawnObject>().stoop();
+            character.GetComponent<CharacterBehavior>().stoop();
+            winScreen.SetActive(true);
+        }
+        //Method to lose would look like this, but I dunno if this is nessessary or not
+        /*if (currentValue < 0f)
+        {
+            spawner.GetComponent<SpawnObject>().stoop();
+        }
+        */
+
     }
 }
