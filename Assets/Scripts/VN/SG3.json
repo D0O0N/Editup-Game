@@ -94,12 +94,12 @@
         },
         {
           "idQ": "Q6",
-          "question": "Rassurez-vous, nous appliquons toutes les normes en vigueur.",
-          "réponse": "Oui enfin vous dites tous cela ...",
+          "question": "Vous parlez des plastiques toxiques ? Je vous rejoins mais sachez que tout est testé dans nos laboratoires.",
+          "réponse": "Mais qu'est-ce qui est testé ?",
           "posture": 3,
           "résultat": {
             "typeRes": 3,
-            "raisonGO": "Evitez ce genre de formule qui ne vous aide pas à neutraliser l'objection. Acceptez les réserves de votre cliente et questionnez-là pour en savoir plus."
+            "raisonGO": "Ne devancez pas la pensée de votre cliente ! Vous risquez d'apporter un nouveau sujet d'objection. Acceptez ses  réserves de votre cliente et questionnez-là pour en savoir plus."
           }
         }
       ],
