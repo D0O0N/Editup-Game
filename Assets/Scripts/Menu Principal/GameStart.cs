@@ -27,4 +27,8 @@ public class GameStart : MonoBehaviour
             PlayerPrefs.SetInt("LvlComp"+i, 0);
         }
     }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
 }

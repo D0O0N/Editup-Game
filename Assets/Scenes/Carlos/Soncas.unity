@@ -1934,19 +1934,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionsArray:
-  - Question Se
-  - Question O
-  - Question N
-  - Question C
-  - Question A
-  - Question Sy
+  - "Y-a-t-il des protections \xE0 l\u2019arri\xE8re ?"
+  - "Je ne veux pas ressembler \xE0 \xAB monsieur tout le monde \xBB"
+  - "C\u2019est le tout dernier de la gamme ?"
+  - Je voudrais quelque chose de pratique
+  - "Et \xE7a coute combien ?"
+  - "C\u2019est pour les 50 ans de mon p\xE8re."
   answerArray:
-  - Se
-  - O
-  - N
-  - C
-  - A
-  - Sy
+  - se
+  - o
+  - n
+  - c
+  - a
+  - sy
   charactersArray:
   - {fileID: 21300000, guid: 24b44cef98db28e42be936f278ca6ee8, type: 3}
   - {fileID: 21300000, guid: e4afaaa916c4f9345b4c7a3e3e74c2e3, type: 3}
