@@ -494,6 +494,7 @@ MonoBehaviour:
   popupTitle: {fileID: 1395397698}
   popupText: {fileID: 1025452096}
   endLevel: {fileID: 907005570}
+  endLevelText: {fileID: 1880815101}
   levelChoice: {fileID: 1063069750}
   VNParent: {fileID: 1618239554}
   titreVN: {fileID: 1597124733}
@@ -526,7 +527,7 @@ GameObject:
   - component: {fileID: 544764354}
   - component: {fileID: 544764353}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

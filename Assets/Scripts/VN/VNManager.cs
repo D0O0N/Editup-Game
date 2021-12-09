@@ -14,6 +14,7 @@ public class VNManager : MonoBehaviour
     public TextMeshProUGUI popupTitle;
     public TextMeshProUGUI popupText;
     public GameObject endLevel;
+    public TextMeshProUGUI endLevelText;
     public GameObject levelChoice;
     public Transform VNParent;
     public TextMeshProUGUI titreVN;
@@ -219,7 +220,7 @@ public class VNManager : MonoBehaviour
     private void FinPartie()
     {
 
-        endLevel.GetComponentInChildren<TextMeshProUGUI>().text = vn.TexteFin;
+        endLevelText.text = vn.TexteFin;
         endLevel.SetActive(true);
         
         PlayerPrefs.SetInt("LvlComp"+actualComp, 3);
