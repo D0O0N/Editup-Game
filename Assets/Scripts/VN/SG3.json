@@ -102,7 +102,8 @@
             "raisonGO": "Evitez ce genre de formule qui ne vous aide pas à neutraliser l'objection. Acceptez les réserves de votre cliente et questionnez-là pour en savoir plus."
           }
         }
-      ]
+      ],
+      "analyseFinCat": "'Vous avez accepté l'objection de votre cliente et cherché à en savoir plus sur ses réserves. C'est parfait, continuez."
     },
     {
       "Catégorie": 2,
