@@ -42,10 +42,15 @@ public class DamierManager : MonoBehaviour
     //float startTime = 10;
     //double timeLeft;
     //bool inGame = true;
+
+    AudioSource src;
+    public AudioClip srcGood;
+    public AudioClip srcBad;
  
     // Start is called before the first frame update
     void Start()
     {
+        src = GetComponent<AudioSource>();
        actualComp = actualComp = PlayerPrefs.GetInt("ActualCompetence");
        StartLevel();
        //player = GameObject.FindWithTag("Player").transform;
@@ -195,9 +200,13 @@ public class DamierManager : MonoBehaviour
         if (goodChoice)
         {
             nextLine.GoodAnswer(choice);
+            src.clip = srcGood;
+            src.Play();
         }
         else
         {
+            src.clip = srcBad;
+            src.Play();
             nextLine.WrongAnswer(choice);
         }
         

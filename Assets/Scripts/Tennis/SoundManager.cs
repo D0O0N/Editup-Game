@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-
     AudioSource src;
     public AudioClip srcGood;
     public AudioClip srcBad;
@@ -16,7 +15,7 @@ public class SoundManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BallBehaviorV2>().type == other.gameObject.GetComponent<BallBehaviorV2>().rep)
+        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
         {
             src.clip = srcGood;
             src.Play();

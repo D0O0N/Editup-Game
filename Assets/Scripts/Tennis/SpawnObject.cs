@@ -23,15 +23,14 @@ public class SpawnObject : MonoBehaviour
 
     void Start()
     {
-        Sentence.text = "Bonjour";
         data = new string[,] {
-                { "10 jours de délai c’est trop long : notre salon est mardi", "R"}, 
-                {"Votre documentation n’est pas claire", "P"}, 
-                {"Il faut que je réfléchisse", "P"},
-                {"Nous sommes plusieurs à décider", "P"},
-                {"Notre budget fourniture est limité à 10K€ par mois", "R"},
-                {"Nous serons en congés cette semaine", "R"},
-                {"Ce n’est pas moi qui décide", "P"},
+                { "10 jours de dÃ©lai c'est trop long : notre salon est mardi", "R"}, 
+                {"Votre documentation n'est pas claire", "P"}, 
+                {"Il faut que je rÃ©flÃ©chisse", "P"},
+                {"Nous sommes plusieurs Ã  dÃ©cider", "P"},
+                {"Notre budget fourniture est limitÃ© Ã  10Kâ‚¬ par mois", "R"},
+                {"Nous serons en congÃ©s cette semaine", "R"},
+                {"Ce n'est pas moi qui dÃ©cide", "P"},
             };
     }
 
