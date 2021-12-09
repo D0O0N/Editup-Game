@@ -25,7 +25,7 @@ public class DamierManager : MonoBehaviour
 
     private float nextActionTime = 0.0f;
     //private float period = 0.02f;                                                                                                                                                                           
-    string data = "Quelles sont les raisons de votre voyage ?;Fermé; Ouverte; 1 _Y êtes vous-déjà allé ?;Fermé; Ouverte;0_Pourquoi dites vous cela ?;Fermé; Ouverte;1_Que lui reprochez vous ?;Fermé; Ouverte;1_Quel est votre budget ?;Fermé; Ouverte;0_Que souhaitez vous faire ?;Fermé; Ouverte;1_Quand partez-vous ?;Fermé; Ouverte;0_Préférez-vous la mer ou la montagne ?;Fermé; Ouverte;0";
+    string data = "Quelles sont les raisons de votre voyage ?;Fermée; Ouverte; 1 _Y êtes vous-déjà allé ?;Fermée; Ouverte;0_Pourquoi dites vous cela ?;Fermée; Ouverte;1_Que lui reprochez-vous ?;Fermée; Ouverte;1_Quel est votre budget ?;Fermée; Ouverte;0_Que souhaitez-vous faire ?;Fermée; Ouverte;1_Quand partez-vous ?;Fermée; Ouverte;0_Préférez-vous la mer ou la montagne ?;Fermée; Ouverte;0";
     
     string question;
     List<string> questions =  new List<string>();

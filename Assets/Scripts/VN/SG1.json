@@ -45,7 +45,7 @@
             "questions": [
                 {
                     "idQ": "Q_01",
-                    "question": "Je vous écoute. Dites moi quel est le problème ?",
+                    "question": "Je vous écoute. Dites-moi quel est le problème ?",
                     "réponse": "Voilà : j'ai souscrit à un forfait d'essai pour un mois la semaine dernière et je viens d'apprendre que je dois partir demain en mission pour deux semaines... Je viens donc reporter ce forfait de 2 semaines.",
                     "posture": 0,
                     "résultat": {

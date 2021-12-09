@@ -92,6 +92,6 @@ public class SpawnObjectV2 : MonoBehaviour
     }
 
     void goMenu() {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("Menu Principal");
     }
 }

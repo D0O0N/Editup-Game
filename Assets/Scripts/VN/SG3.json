@@ -12,7 +12,7 @@
       "questions": [
         {
           "idQ": "A_01",
-          "question": "Bonjour madame Pic. Je vous appelle pour savoir si vous avez consulté notre catalogue de fontaine à eau ?",
+          "question": "Bonjour Madame Pic. Je vous appelle pour savoir si vous avez consulté notre catalogue de fontaine à eau ?",
           "réponse": "Oui merci, mais ce qui me préoccupe, c’est que vos containers sont en plastique",
           "posture": 3,
           "résultat": {
@@ -21,7 +21,7 @@
         },
         {
           "idQ": "A_02",
-          "question": "Bonjour madame Pic. Qu'avez-vous pensé de notre service de fontaine à eau ? Vous avez du recevoir notre catalogue n'est-ce pas ?",
+          "question": "Bonjour Madame Pic. Qu'avez-vous pensé de notre service de fontaine à eau ? Vous avez du recevoir notre catalogue, n'est-ce pas ?",
           "réponse": "Oui merci, mais ce qui me préoccupe, c’est que vos containers sont en plastique",
           "posture": 3,
           "résultat": {
@@ -30,7 +30,7 @@
         },
         {
           "idQ": "A_03",
-          "question": "Bonjour madame Pic. Avez-vous reçu notre catalogue qui présente nos fontaines à eaux ?",
+          "question": "Bonjour Madame Pic. Avez-vous reçu notre catalogue qui présente nos fontaines à eau ?",
           "réponse": "Oui merci, mais ce qui me préoccupe, c’est que vos containers sont en plastique",
           "posture": 3,
           "résultat": {
@@ -74,7 +74,7 @@
         },
         {
           "idQ": "Q4",
-          "question": "Il n’y a aucune raison de vous inquieter madame Pic.",
+          "question": "Il n’y a aucune raison de vous inquiéter Madame Pic.",
           "réponse": "Et bien si, je m'inquiète ! Justement !",
           "posture": 3,
           "résultat": {
@@ -103,7 +103,7 @@
           }
         }
       ],
-      "analyseFinCat": "'Vous avez accepté l'objection de votre cliente et cherché à en savoir plus sur ses réserves. C'est parfait, continuez."
+      "analyseFinCat": "Vous avez accepté l'objection de votre cliente et cherché à en savoir plus sur ses réserves. C'est parfait, continuez."
     },
     {
       "Catégorie": 2,
@@ -111,7 +111,7 @@
       "questions": [
         {
           "idQ": "Q_01",
-          "question": "Connaissez-vous le règlement 10/2011 de la commission européenne ?",
+          "question": "Connaissez-vous le règlement 10/2011 de la Commission Européenne ?",
           "réponse": "Non je ne suis pas spécialiste ! De quoi me parlez-vous ?",
           "posture": 0,
           "résultat": {

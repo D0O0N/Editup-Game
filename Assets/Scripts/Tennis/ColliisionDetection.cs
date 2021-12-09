@@ -29,7 +29,7 @@ public class ColliisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "R")
         {
             float currentValue = animator.GetFloat("Status");
             if (currentValue > 0f){
@@ -44,7 +44,7 @@ public class ColliisionDetection : MonoBehaviour
 
 
         }
-        if (other.gameObject.GetComponent<BallBehavior>().type == "R")
+        if (other.gameObject.GetComponent<BallBehavior>().type == "P")
         {
             float currentValue = animator.GetFloat("Status");
             animator.SetFloat("Status", currentValue + BonusPointValue);
