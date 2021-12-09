@@ -10,10 +10,13 @@ public class LifeBarBehavior : MonoBehaviour
     public GameObject spawner;
     public GameObject character;
     public GameObject winScreen;
+
+    public int actualComp;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        actualComp = actualComp = PlayerPrefs.GetInt("ActualCompetence");
     }
 
     // Update is called once per frame
@@ -26,6 +29,8 @@ public class LifeBarBehavior : MonoBehaviour
             spawner.GetComponent<SpawnObject>().stoop();
             character.GetComponent<CharacterBehavior>().stoop();
             winScreen.SetActive(true);
+            PlayerPrefs.SetInt("LvlComp"+actualComp, 2);
+
         }
         //Method to lose would look like this, but I dunno if this is nessessary or not
         /*if (currentValue < 0f)

@@ -37,6 +37,7 @@ public class DamierManager : MonoBehaviour
     string[] answer;
     int score = 0;
     public int endScore = 8;
+    private int actualComp;
 
     //float startTime = 10;
     //double timeLeft;
@@ -45,7 +46,7 @@ public class DamierManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       actualComp = actualComp = PlayerPrefs.GetInt("ActualCompetence");
        StartLevel();
        //player = GameObject.FindWithTag("Player").transform;
        
@@ -235,6 +236,11 @@ public class DamierManager : MonoBehaviour
     void ShowEndLevel(){
         endLevelPopup.SetActive(true);
         textEnd.text = "Bravo vos avez trouvé "+score+" / " + questions.Count + "bonnes réponses.";
+        Validate();
+    }
+
+    public void Validate(){
+        PlayerPrefs.SetInt("LvlComp"+actualComp, 2);
     }
 
     

@@ -31,18 +31,20 @@ public class VNManager : MonoBehaviour
     private int actionPoints;
     private string msgZeroActionPoint = "Vous n'avez plus de points d'actions";
     private Sprite[] emotions;
+    private int actualComp;
+
     // Start is called before the first frame update
     void Start()
     {
-        int comp = PlayerPrefs.GetInt("ActualCompetence", 666);
-        if (comp.Equals(666))
+        actualComp = PlayerPrefs.GetInt("ActualCompetence");
+        if (actualComp.Equals(666))
         {
             SearchVN();
             levelChoice.SetActive(true);
         }
         else
         {
-            LoadVN(comp);
+            LoadVN(actualComp);
         }
         
         //LoadVN(nb);
@@ -216,8 +218,12 @@ public class VNManager : MonoBehaviour
 
     private void FinPartie()
     {
+
         endLevel.GetComponentInChildren<TextMeshProUGUI>().text = vn.TexteFin;
         endLevel.SetActive(true);
+        
+        PlayerPrefs.SetInt("LvlComp"+actualComp, 3);
+        
     }
 
     private void GameOver(string raison)

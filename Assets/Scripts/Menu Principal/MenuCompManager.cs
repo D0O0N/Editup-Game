@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuCompManager : MonoBehaviour
 {
-    private int actualComp = 1;
+    private int actualComp;
     private int lvlComp = 0;
 
     public GameObject[] buttons;
@@ -28,9 +28,15 @@ public class MenuCompManager : MonoBehaviour
 
     void LoadComp(){
         lvlComp = PlayerPrefs.GetInt("LvlComp" + actualComp);
-        for (int i = 0; i < lvlComp; i++)
+        Debug.Log("ActualComp: " + actualComp);
+        Debug.Log("LevelComp: " + lvlComp);
+        for (int i = 0; i <= lvlComp; i++)
         {
-             buttons[i].GetComponent<LockButton>().Unlock();
+            Debug.Log("i : " + i);
+            if (i < 3){
+                buttons[i].GetComponent<LockButton>().Unlock();
+            }
+            
         }
 
     }

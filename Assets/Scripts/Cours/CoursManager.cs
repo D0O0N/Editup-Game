@@ -69,8 +69,8 @@ public class CoursManager : MonoBehaviour
 
     public void EndCours(){
         SceneManager.LoadScene(2);
-        if (lvlComp < 2){
-            PlayerPrefs.SetInt("LvlComp"+actualComp, 2);
+        if (lvlComp < 1){
+            PlayerPrefs.SetInt("LvlComp"+actualComp, 1);
         }
     }
 }
