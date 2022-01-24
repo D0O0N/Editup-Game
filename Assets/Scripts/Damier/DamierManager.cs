@@ -249,7 +249,8 @@ public class DamierManager : MonoBehaviour
     }
 
     public void Validate(){
-        PlayerPrefs.SetInt("LvlComp"+actualComp, 2);
+        if (PlayerPrefs.GetInt("LvlComp"+actualComp) <2)
+            PlayerPrefs.SetInt("LvlComp"+actualComp, 2);
     }
 
     
