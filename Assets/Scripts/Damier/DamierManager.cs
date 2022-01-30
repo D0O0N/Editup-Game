@@ -8,7 +8,7 @@ public class DamierManager : MonoBehaviour
 {
     //public TextMeshProUGUI textTime;
     public TextMeshProUGUI textQuestion;
-    public TextMeshProUGUI textEnd;
+    //public TextMeshProUGUI textEnd;
     public GameObject[] linePlacement;
     
 
@@ -25,17 +25,17 @@ public class DamierManager : MonoBehaviour
 
     private float nextActionTime = 0.0f;
     //private float period = 0.02f;                                                                                                                                                                           
-    string data = "Quelles sont les raisons de votre voyage ?;Fermée; Ouverte; 1 _Y êtes vous-déjà allé ?;Fermée; Ouverte;0_Pourquoi dites vous cela ?;Fermée; Ouverte;1_Que lui reprochez-vous ?;Fermée; Ouverte;1_Quel est votre budget ?;Fermée; Ouverte;0_Que souhaitez-vous faire ?;Fermée; Ouverte;1_Quand partez-vous ?;Fermée; Ouverte;0_Préférez-vous la mer ou la montagne ?;Fermée; Ouverte;0";
-    
-    string question;
-    List<string> questions =  new List<string>();
-    int goodAnswer;
-    List<int> goodAnswers =  new List<int>();
+    private string data = "Quelles sont les raisons de votre voyage ?;Fermée; Ouverte; 1 _Y êtes vous-déjà allé ?;Fermée; Ouverte;0_Pourquoi dites vous cela ?;Fermée; Ouverte;1_Que lui reprochez-vous ?;Fermée; Ouverte;1_Quel est votre budget ?;Fermée; Ouverte;0_Que souhaitez-vous faire ?;Fermée; Ouverte;1_Quand partez-vous ?;Fermée; Ouverte;0_Préférez-vous la mer ou la montagne ?;Fermée; Ouverte;0";
 
-    int actualQuestion = 0;
+    private string question;
+    private List<string> questions;
+    private int goodAnswer;
+    private List<int> goodAnswers;
 
-    string[] answer;
-    int score = 0;
+    private int actualQuestion = 0;
+
+    private string[] answer;
+    private int score = 0;
     public int endScore = 8;
     private int actualComp;
 
@@ -43,7 +43,7 @@ public class DamierManager : MonoBehaviour
     //double timeLeft;
     //bool inGame = true;
 
-    AudioSource src;
+    private AudioSource src;
     public AudioClip srcGood;
     public AudioClip srcBad;
  
@@ -70,6 +70,7 @@ public class DamierManager : MonoBehaviour
         //timeLeft = startTime;
         // Reset
         questions =  new List<string>();
+        goodAnswers = new List<int>();
         actualQuestion = 0;
         //
         ReadData(data);
@@ -244,7 +245,8 @@ public class DamierManager : MonoBehaviour
     }
     void ShowEndLevel(){
         endLevelPopup.SetActive(true);
-        textEnd.text = "Bravo vos avez trouvé "+score+" / " + questions.Count + "bonnes réponses.";
+        //Removed line because was unused and made the game plant
+        //textEnd.text = "Bravo vos avez trouvé "+ this.score + " / " + this.questions.Count + "bonnes réponses.";
         Validate();
     }
 
