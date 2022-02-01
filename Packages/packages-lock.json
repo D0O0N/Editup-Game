@@ -82,6 +82,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.editorcoroutines": {
+      "version": "0.1.0-preview.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -177,6 +184,15 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.wispbart.butlerwindow": {
+      "version": "https://github.com/WispBart/ButlerWindow.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.editorcoroutines": "0.1.0-preview.1"
+      },
+      "hash": "406a889ed4fedcc921bdc419172ebe19a7f1241b"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
