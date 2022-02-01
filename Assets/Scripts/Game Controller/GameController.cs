@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private GameObject character;
     [SerializeField] private Text questionText;
-    [SerializeField] private Text happyClientsText;
-    [SerializeField] private Text sadClientsText;
+    [SerializeField] private TextMeshProUGUI happyClientsText;
+    [SerializeField] private TextMeshProUGUI sadClientsText;
     [SerializeField] private TextAsset jsonFile;
 
     //[SerializeField] private GameObject clock;
@@ -138,7 +139,7 @@ public class GameController : MonoBehaviour
         string mssg = $"Clients satisfaits: {hc}";
         happyClientsText.text = mssg;
 
-        mssg = $"Clients decus: {sc}";
+        mssg = $"Clients déçus: {sc}";
         sadClientsText.text = mssg;
     }
 
