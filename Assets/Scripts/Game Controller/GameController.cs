@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private Text questionText;
     [SerializeField] private Text happyClientsText;
     [SerializeField] private Text sadClientsText;
+    [SerializeField] private TextAsset jsonFile;
 
     //[SerializeField] private GameObject clock;
 
@@ -33,7 +34,7 @@ public class GameController : MonoBehaviour
     private int happyClients = 0;
     private int sadClients = 0;
 
-    private string jsonFilePath = "Assets/Scripts/JSON/QAlist.json";
+    //private string jsonFilePath = "Assets/Scripts/JSON/QAlist.json";
 
 
     // Start is called before the first frame update
@@ -102,7 +103,9 @@ public class GameController : MonoBehaviour
 
     private void InitialisatioAndCreationJSONFile()
     {
-        if (File.Exists(jsonFilePath))
+       
+       
+        if (jsonFile!= null)
         {
             // File exists, load Q&A's
             ReadJSON();
@@ -110,7 +113,7 @@ public class GameController : MonoBehaviour
         else
         {
             // File does not exist. // This could mean it was deleted or has not been created yet. // Write new json file with default questions and answer form editor
-            WriteJSON();
+            //WriteJSON();
         }
     }
 
@@ -184,24 +187,24 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void WriteJSON()
-    {
-        QuestionsAnswers QAdata = new QuestionsAnswers();
-        QAdata.questions = questionsArray;
-        QAdata.answers = answerArray;
+    //private void WriteJSON()
+    //{
+    //    QuestionsAnswers QAdata = new QuestionsAnswers();
+    //    QAdata.questions = questionsArray;
+    //    QAdata.answers = answerArray;
 
-        string json = JsonUtility.ToJson(QAdata);
-        Debug.Log(json);
+    //    string json = JsonUtility.ToJson(QAdata);
+    //    Debug.Log(json);
 
-        File.WriteAllText(jsonFilePath, json);
-    }
+    //    File.WriteAllText(jsonFile, json);
+    //}
 
     private void ReadJSON()
     {
         QuestionsAnswers QAdata = new QuestionsAnswers();
 
-        string jsonText = File.ReadAllText(jsonFilePath);
-        JsonUtility.FromJsonOverwrite(jsonText, QAdata);
+        //string jsonText = File.ReadAllText(jsonFile);
+        JsonUtility.FromJsonOverwrite(jsonFile.text, QAdata);
 
         questionsArray = QAdata.questions;
         answerArray = QAdata.answers;
