@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnObject : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class SpawnObject : MonoBehaviour
     public Rigidbody ball;
     float timeLeft = 1f;
     private int random;
-    public UnityEngine.UI.Text Sentence;
+    // public UnityEngine.UI.Text Sentence;
+    public TextMeshProUGUI Sentence;
     private string[,] data;
     private bool stopGame = false;
 

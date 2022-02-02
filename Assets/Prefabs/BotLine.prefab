@@ -92,10 +92,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -220,7 +220,7 @@ RectTransform:
   m_GameObject: {fileID: 2964566585824285993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 50.441162}
-  m_LocalScale: {x: 1.6613934, y: 1.6613934, z: 1.6613934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2964566584830475792}
   m_Father: {fileID: 2964566585940524346}
@@ -228,8 +228,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194.25989, y: 0}
-  m_SizeDelta: {x: 221.4348, y: 191.8347}
+  m_AnchoredPosition: {x: 194.30403, y: -0.24300385}
+  m_SizeDelta: {x: 367.87204, y: 319.19397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2964566585824285989
 CanvasRenderer:
@@ -353,7 +353,7 @@ RectTransform:
   m_GameObject: {fileID: 2964566586026216538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 50.441162}
-  m_LocalScale: {x: 1.6613934, y: 1.6613934, z: 1.6613934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2964566586304784736}
   m_Father: {fileID: 2964566585940524346}
@@ -361,8 +361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 0}
-  m_SizeDelta: {x: 221.4348, y: 191.8347}
+  m_AnchoredPosition: {x: -190.56001, y: -0.000015258789}
+  m_SizeDelta: {x: 367.67996, y: 318.59998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2964566586026216534
 CanvasRenderer:
@@ -550,10 +550,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
