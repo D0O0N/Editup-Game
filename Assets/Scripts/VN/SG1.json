@@ -21,7 +21,7 @@
                 },
                 {
                     "idQ": "A_02",
-                    "question": "Bonjour Monsieur, bienvenu chez GymFit. Puis-je vous aider ?",
+                    "question": "Bonjour Monsieur, bienvenue chez GymFit. Puis-je vous aider ?",
                     "réponse": "Bonjour. Oui, j'ai un problème à régler.",
                     "posture": 0,
                     "résultat": {
@@ -30,7 +30,7 @@
                 },
                 {
                     "idQ": "A_03",
-                    "question": "Bienvenu chez GymFit Monsieur. En quoi puis-je vous aider ?",
+                    "question": "Bienvenue chez GymFit Monsieur. En quoi puis-je vous aider ?",
                     "réponse": "Bonjour. Je viens régler un problème.",
                     "posture": 0,
                     "résultat": {
