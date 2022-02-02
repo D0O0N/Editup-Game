@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CollisionDetectionV2 : MonoBehaviour
 {
-    public Text txtScore;
+    public TextMeshProUGUI txtScore;
     public GameObject spawner;
     public CharacterBehavior chara;
     public GameObject endScreen;

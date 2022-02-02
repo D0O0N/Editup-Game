@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 
 public class SpawnObjectV2 : MonoBehaviour
@@ -13,14 +15,14 @@ public class SpawnObjectV2 : MonoBehaviour
     public Rigidbody ball;
     float timeLeft = 1f;
     private int random;
-    public UnityEngine.UI.Text Sentence;
+    public TextMeshProUGUI Sentence;
     private string[,] data;
     private bool stopGame = false;
     public GameObject spawn1;
     public GameObject spawn2;
     public Sprite spriteBallF;
     public Sprite spriteBallI;
-    public Button btnMenu;
+    //public Button btnMenu;
     public Button btnMenu2;
 
     // Start is called before the first frame update
@@ -37,7 +39,7 @@ public class SpawnObjectV2 : MonoBehaviour
                 {"Il n'est jamais là", "I"}
             };
 
-        btnMenu.onClick.AddListener(goMenu);
+        //btnMenu.onClick.AddListener(goMenu);
         btnMenu2.onClick.AddListener(goMenu);
     }
 
